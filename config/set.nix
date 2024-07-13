@@ -1,6 +1,8 @@
 {
   opts = {
     number = true;
+    spell = true;
+    spelllang = "en_us";
     relativenumber = true;
     tabstop = 2;
     softtabstop = 2;
@@ -21,7 +23,6 @@
     backup = false;
     history = 10000;
     undofile = true;
-    # undodir = os.getenv('HOME') .. '/.vim/undodir';
     showmode = false;
     cursorline = true;
     cursorlineopt = "number";
@@ -29,5 +30,16 @@
     conceallevel = 0;
     grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
+    statusline = ''%<%f %{v:lua.GetStatusLineGitInformation()} %h%m%r%=%-14.(%l,%c%V%) %P'';
+    cmdheight = 0;
   };
+  globals = {
+    netrw_bufsettings = ''noma nomod nu bl nowrap ro'';
+    netrw_preview = 1;
+    netrw_sizestyle = "H";
+    netrw_liststyle = "3";
+    netrw_list_hide = ''\.\./,\./,\.git/,__pycache__/'';
+    netrw_banner = 0;
+  };
+  clipboard.providers.wl-copy.enable = true;
 }

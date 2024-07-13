@@ -7,11 +7,11 @@
       disable_underlines = true;
       term_colors = true;
       integrations = {
+        treesitter = true;
         cmp = true;
         telescope = true;
         gitsigns = true;
         illuminate = true;
-        treesitter = true;
       };
     };
   };

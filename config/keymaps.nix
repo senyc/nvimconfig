@@ -1,5 +1,5 @@
 let
-  utils = import ../utils;
+  utils = import ../utils.nix;
 in {
   globals.mapleader = " ";
 

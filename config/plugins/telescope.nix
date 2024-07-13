@@ -1,5 +1,5 @@
 let
-  utils = import ../../utils;
+  utils = import ../../utils.nix;
 in {
   plugins.telescope = {
     enable = true;
@@ -32,28 +32,16 @@ in {
   };
   extraConfigLua = ''
     -- Will return top level git directory, if one does not exist it will return current buffer directory
-    local function get_search_dir()
-      local handler = io.popen 'git rev-parse --show-toplevel 2>/dev/null'
-      if not handler then
-        return require('telescope.utils').buffer_dir()
-      end
-      local result = handler:read('*l')
-      if not result then
-        return require('telescope.utils').buffer_dir()
-      end
-      return result
-    end
-
     function GitSearch()
-      require('telescope.builtin').find_files { cwd = get_search_dir() }
+      require('telescope.builtin').find_files { cwd = GetSearchDir() }
     end
 
     function GrepSearch()
-      require('telescope.builtin').live_grep { cwd = get_search_dir() }
+      require('telescope.builtin').live_grep { cwd = GetSearchDir() }
     end
 
     function GrepStringSearch()
-      require('telescope.builtin').grep_string { cwd = get_search_dir() }
+      require('telescope.builtin').grep_string { cwd = GetSearchDir() }
     end
   '';
   keymaps = utils.defaultMap [

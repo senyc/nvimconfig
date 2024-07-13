@@ -1,6 +1,8 @@
-{
+{pkgs, ...}: {
+
   plugins.lsp = {
     enable = true;
+
     keymaps = {
       diagnostic = {
         "<leader>dn" = "goto_next";
@@ -30,18 +32,18 @@
         enable = true;
         extraOptions = {
           settings = {
-          nil = {
-            formatting = {
-              command = ["alejandra"];
-            };
-            nix = {
-              flake = {
-                autoArchive = true;
-                autoEvalInputs = false;
+            nil = {
+              formatting = {
+                command = ["alejandra"];
+              };
+              nix = {
+                flake = {
+                  autoArchive = true;
+                  autoEvalInputs = false;
+                };
               };
             };
           };
-        };
         };
       };
       pyright.enable = true;
@@ -50,4 +52,21 @@
       yamlls.enable = true;
     };
   };
+
+  extraPackages = with pkgs; [
+    alejandra
+  ];
+
+  extraConfigLua = ''
+    for type, icon in pairs({
+      Error = '>>',
+      Warn = '->',
+      Hint = '>-',
+      Info = '--'
+    }) do
+      local name = 'DiagnosticSign' .. type
+      local mapping = { text = icon, texthl = name, numhl = "" }
+      vim.fn.sign_define(name, mapping)
+    end
+  '';
 }

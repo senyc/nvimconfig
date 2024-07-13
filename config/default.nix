@@ -1,4 +1,21 @@
 {
   # Import all your configuration modules here
-  imports = [./plugins/catppuccin.nix ./plugins/telescope.nix ./set.nix ./keymaps.nix ./plugins/lsp.nix ./diagnostic.nix ./extra.nix];
+  imports = [
+    ./set.nix
+    ./keymaps.nix
+    ./plugins/catppuccin.nix
+    ./plugins/gitsigns.nix
+    ./plugins/treesitter.nix
+    ./highlight.nix
+
+    ./diagnostic.nix
+    ./functions.nix
+    ./autocommand.nix
+
+    ./plugins/cmp.nix
+    ./plugins/comment.nix
+    ./plugins/lsp.nix
+    ./plugins/nvim-surround.nix
+    ./plugins/telescope.nix
+  ];
 }

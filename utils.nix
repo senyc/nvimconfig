@@ -4,6 +4,7 @@
       {
         options = {
           noremap = true;
+          silent = true;
           desc =
             if v ? desc
             then desc
