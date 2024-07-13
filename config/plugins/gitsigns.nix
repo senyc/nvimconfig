@@ -4,6 +4,22 @@ in {
   plugins.gitsigns = {
     enable = true;
     settings = {
+      signs = {
+        add.text = "│";
+        change.text = "│";
+        delete.text = "_";
+        topdelete.text = "‾";
+        changedelete .text = "~";
+        untracked .text = "┆";
+      };
+      signcolumn = true;
+      numhl = false;
+      linehl = false;
+      word_diff = false;
+      watch_gitdir = {
+        follow_files = true;
+      };
+      attach_to_untracked = true;
       current_line_blame = true;
       current_line_blame_formatter = ''<author> • <author_time:%m/%d/%Y> • <summary>'';
       current_line_blame_opts = {

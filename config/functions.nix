@@ -21,7 +21,7 @@
       end
       local result = handler:read('*l')
       if not result then
-        return gitdir
+        return gitdir .. "/"
       end
       return gitdir .. "/" .. result
     end
