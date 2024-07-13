@@ -1,5 +1,5 @@
 {
-  plugins.bufferline = {
+  plugins.treesitter = {
     enable = true;
   };
 }

@@ -1,0 +1,53 @@
+{
+  plugins.lsp = {
+    enable = true;
+    keymaps = {
+      diagnostic = {
+        "<leader>dn" = "goto_next";
+        "<leader>dp" = "goto_prev";
+        "<leader>dq" = "setqflist";
+        "<leader>do" = "open_float";
+      };
+      lspBuf = {
+        "K" = "hover";
+        "gd" = "definition";
+        "gD" = "implementation";
+        "<leader>fs" = "workspace_symbol";
+        "<leader>rs" = "rename";
+        "<leader>a" = "code_action";
+        "gr" = "references";
+        "<leader>=" = "format";
+      };
+    };
+
+    servers = {
+      bashls.enable = true;
+      clangd.enable = true;
+      cssls.enable = true;
+      gopls.enable = true;
+      lua-ls.enable = true;
+      nil-ls = {
+        enable = true;
+        extraOptions = {
+          settings = {
+          nil = {
+            formatting = {
+              command = ["alejandra"];
+            };
+            nix = {
+              flake = {
+                autoArchive = true;
+                autoEvalInputs = false;
+              };
+            };
+          };
+        };
+        };
+      };
+      pyright.enable = true;
+      tailwindcss.enable = true;
+      tsserver.enable = true;
+      yamlls.enable = true;
+    };
+  };
+}
