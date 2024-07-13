@@ -3,19 +3,20 @@
   imports = [
     ./set.nix
     ./keymaps.nix
-    ./plugins/catppuccin.nix
-    ./plugins/gitsigns.nix
-    ./plugins/treesitter.nix
-    ./highlight.nix
-
-    ./diagnostic.nix
-    ./functions.nix
     ./autocommand.nix
 
-    ./plugins/cmp.nix
-    ./plugins/comment.nix
+    ./functions.nix
+    ./highlight.nix
+    ./diagnostic.nix
+    ./filetype.nix
+
+    ./plugins/catppuccin.nix
     ./plugins/lsp.nix
-    ./plugins/nvim-surround.nix
+    ./plugins/cmp.nix
+    ./plugins/treesitter.nix
     ./plugins/telescope.nix
+    ./plugins/gitsigns.nix
+    ./plugins/comment.nix
+    ./plugins/nvim-surround.nix
   ];
 }

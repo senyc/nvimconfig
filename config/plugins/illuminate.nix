@@ -4,14 +4,13 @@
     providers = [
       "lsp"
       "treesitter"
-      "regex"
     ];
     filetypesDenylist = [
+      "Outline"
       "netrw"
       "TelescopePrompt"
     ];
     underCursor = true;
-    minCountToHighlight = 1;
     delay = 50;
   };
 }

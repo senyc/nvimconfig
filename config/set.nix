@@ -1,13 +1,17 @@
 {
   opts = {
-    number = true;
     spell = true;
     spelllang = "en_us";
+
+    number = true;
     relativenumber = true;
+    cursorline = true;
+
     tabstop = 2;
     softtabstop = 2;
     shiftwidth = 2;
     expandtab = true;
+
     smartindent = false;
     cindent = true;
     termguicolors = true;
@@ -24,15 +28,14 @@
     history = 10000;
     undofile = true;
     showmode = false;
-    cursorline = true;
     cursorlineopt = "number";
     wrap = false;
     conceallevel = 0;
     grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
     statusline = ''%<%f %{v:lua.GetStatusLineGitInformation()} %h%m%r%=%-14.(%l,%c%V%) %P'';
-    cmdheight = 0;
   };
+
   globals = {
     netrw_bufsettings = ''noma nomod nu bl nowrap ro'';
     netrw_preview = 1;

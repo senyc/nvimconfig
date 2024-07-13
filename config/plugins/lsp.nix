@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   plugins.lsp = {
     enable = true;
 
@@ -55,6 +54,8 @@
 
   extraPackages = with pkgs; [
     alejandra
+    rubyfmt
+    nodePackages.prettier
   ];
 
   extraConfigLua = ''
