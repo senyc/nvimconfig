@@ -44,25 +44,16 @@ in {
   extraConfigLua = ''
     -- Will return top level git directory, if one does not exist it will return current buffer directory
     function GitSearch()
-      require('telescope.builtin').find_files { cwd = GetSearchDir() }
+      require('telescope.builtin').find_files { cwd = GetSearchDir(), hidden = true}
     end
 
     function GrepSearch()
-      require('telescope.builtin').live_grep { cwd = GetSearchDir() }
+      require('telescope.builtin').live_grep { cwd = GetSearchDir(), hidden = true }
     end
 
     function GrepStringSearch()
-      require('telescope.builtin').grep_string { cwd = GetSearchDir() }
+      require('telescope.builtin').grep_string { cwd = GetSearchDir(), hidden = true}
     end
-
-    -- require("telescope").setup{
-    --   pickers = {
-    --     colorscheme = {
-    --       enable_preview = true
-    --     }
-    --   }
-    -- }
-
   '';
   keymaps = utils.defaultMap [
     {
