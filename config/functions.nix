@@ -3,6 +3,7 @@
     function GetSearchDir()
       local handler = io.popen 'git rev-parse --show-toplevel 2>/dev/null'
       if not handler then
+      
         return require('telescope.utils').buffer_dir()
       end
       local result = handler:read('*l')
@@ -24,6 +25,7 @@
         return gitdir .. "/"
       end
       return gitdir .. "/" .. result
+      
     end
 
     function RenameCurrentFile()
