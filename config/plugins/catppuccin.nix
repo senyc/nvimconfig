@@ -15,13 +15,9 @@
         integrations = {
           cmp = true;
           gitsigns = true;
-          illuminate = {
-            enabled = true;
-            lsp = true;
-          };
+          illuminate = true;
           treesitter = true;
-          telescope.enabled = true;
-          indent_blankline.enabled = true;
+          telescope = true;
           native_lsp = {
             enabled = true;
             inlay_hints = {
