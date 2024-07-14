@@ -1,5 +1,18 @@
-{
+{pkgs, ...}: {
   plugins = {
+    luasnip = {
+      enable = true;
+      extraConfig = {
+        enable_autosnippets = true;
+        store_selection_keys = "<Tab>";
+      };
+      fromVscode = [
+        {
+          lazyLoad = true;
+          paths = "${pkgs.vimPlugins.friendly-snippets}";
+        }
+      ];
+    };
     cmp = {
       enable = true;
       autoEnableSources = true;
@@ -12,24 +25,6 @@
             cmp.mapping.preset.insert({
               ['<tab>'] = cmp.mapping.confirm({select = true}),
               ['<CR>'] = cmp.mapping.confirm({ select = false }),
-              ['<C-n>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                      cmp.select_next_item()
-                    elseif luasnip.expand_or_jumpable() then
-                      luasnip.expand_or_jump()
-                    else
-                      fallback()
-                    end
-                  end, { 'i', 's' }),
-              ['<C-p>'] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                  cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                  luasnip.jump(-1)
-                else
-                  fallback()
-                end
-              end, { 'i', 's' }),
             })
           '';
         };
@@ -40,6 +35,9 @@
           {name = "luasnip";}
           {name = "buffer";}
         ];
+        snippet = {
+          expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+        };
         window = {
           completion = {
             border = "rounded";
@@ -48,6 +46,11 @@
           documentation = {
             border = "rounded";
           };
+        };
+        performance = {
+          debounce = 60;
+          fetching_timeout = 200;
+          max_view_entries = 30;
         };
       };
     };
@@ -65,12 +68,12 @@
         sources = cmp.config.sources({
           { name = 'path' }
           }, {
-          { name = 'cmdline',  
+          { name = 'cmdline',
             option = {
               ignore_cmds = { 'Man', '!', 'write', 'buffer' }
             }
           }
         }),
-      }) 
-    '';
+      })
+  '';
 }

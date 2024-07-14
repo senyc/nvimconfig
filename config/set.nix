@@ -1,6 +1,6 @@
 {
   opts = {
-    spell = false;
+    spell = true;
 
     number = true;
     relativenumber = true;
@@ -22,7 +22,10 @@
     incsearch = true;
     scrolloff = 8;
     signcolumn = "yes";
-    updatetime = 50;
+    updatetime = 50; # faster completion (4000ms default)
+
+    completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
+
     autochdir = true;
     swapfile = false;
     backup = false;
@@ -34,7 +37,11 @@
     conceallevel = 0;
     grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
-    statusline = /*vim*/''%<%f %{v:lua.GetStatusLineGitInformation()} %h%m%r%=%-14.(%l,%c%V%) %P'';
+    statusline =
+      /*
+      vim
+      */
+      ''%<%f %{v:lua.GetStatusLineGitInformation()} %h%m%r%=%-14.(%l,%c%V%) %P'';
   };
 
   globals = {
