@@ -1,7 +1,6 @@
 {
   opts = {
-    spell = true;
-    spelllang = "en_us";
+    spell = false;
 
     number = true;
     relativenumber = true;

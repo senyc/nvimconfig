@@ -27,6 +27,30 @@
       cssls.enable = true;
       gopls.enable = true;
       lua-ls.enable = true;
+      typos-lsp = {
+        enable = true;
+        extraOptions = {
+          settings = {
+            Lua = {
+              format = {
+                enable = true;
+              };
+              diagnostics = {
+                globals = ["vim" "spec"];
+              };
+              runtime = {
+                version = "LuaJIT";
+                special = {
+                  spec = "require";
+                };
+              };
+              telemetry = {
+                enable = false;
+              };
+            };
+          };
+        };
+      };
       nil-ls = {
         enable = true;
         extraOptions = {
