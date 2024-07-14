@@ -3,8 +3,19 @@ let
 in {
   plugins.telescope = {
     enable = true;
+    extensions = {
+      fzf-native = {
+        enable = true;
+      };
+    };
     settings = {
       defaults = {
+        layout_config = {
+          horizontal = {
+            prompt_position = "top";
+          };
+        };
+        sorting_strategy = "ascending";
         file_ignore_patterns = [
           "^.git/"
           "node_modules/"
@@ -43,6 +54,15 @@ in {
     function GrepStringSearch()
       require('telescope.builtin').grep_string { cwd = GetSearchDir() }
     end
+
+    -- require("telescope").setup{
+    --   pickers = {
+    --     colorscheme = {
+    --       enable_preview = true
+    --     }
+    --   }
+    -- }
+
   '';
   keymaps = utils.defaultMap [
     {

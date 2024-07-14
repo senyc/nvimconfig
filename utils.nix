@@ -1,5 +1,5 @@
 {
-  defaultMap = builtins.map (v:
+  defaultMap = map (v:
     with v;
       {
         options = {

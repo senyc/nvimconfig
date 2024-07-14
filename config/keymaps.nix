@@ -83,22 +83,34 @@ in {
       desc = "navigates to next quickfix item, centering the screen";
     }
     {
-      action = ":cprev<cr>zz";
+      action = "<cmd>cprev<cr>zz";
       key = "<leader>,";
       mode = "n";
       desc = "navigates to previous quickfix item, centering the screen";
     }
     {
-      action = ":cclose<cr>";
+      action = "<cmd>cclose<cr>";
       key = "<leader>cc";
       mode = "n";
       desc = "quickfix close";
     }
     {
-      action = ":copen<cr>";
+      action = "<cmd>copen<cr>";
       key = "<leader>co";
       mode = "n";
       desc = "quickfix open";
+    }
+    {
+      action = ":lua RenameCurrentFile()<cr>";
+      key = "<leader>rn";
+      mode = "n";
+      desc = "rename current file";
+    }
+    {
+      action = ":lua DeleteCurrentFile()<cr>";
+      key = "<leader>rd";
+      mode = "n";
+      desc = "Remove current buffer and associated file";
     }
   ];
 }

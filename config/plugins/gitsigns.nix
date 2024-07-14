@@ -9,8 +9,8 @@ in {
         change.text = "│";
         delete.text = "_";
         topdelete.text = "‾";
-        changedelete .text = "~";
-        untracked .text = "┆";
+        changedelete.text = "~";
+        untracked.text = "┆";
       };
       signcolumn = true;
       numhl = false;
@@ -30,6 +30,14 @@ in {
         ignore_whitespace = false;
       };
       sign_priority = 6;
+      max_file_length = 40000;
+      preview_config = {
+        border = "single";
+        style = "minimal";
+        relative = "cursor";
+        row = 0;
+        col = 1;
+      };
     };
   };
   keymaps = utils.defaultMap [
