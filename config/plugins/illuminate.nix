@@ -10,7 +10,8 @@
       "netrw"
       "TelescopePrompt"
     ];
-    underCursor = true;
+    underCursor = false;
     delay = 50;
+    minCountToHighlight = 1;
   };
 }

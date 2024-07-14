@@ -37,11 +37,6 @@
     conceallevel = 0;
     grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
-    statusline =
-      /*
-      vim
-      */
-      ''%<%f %{v:lua.GetStatusLineGitInformation()} %h%m%r%=%-14.(%l,%c%V%) %P'';
   };
 
   globals = {

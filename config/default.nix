@@ -12,6 +12,8 @@
 
     ./plugins/catppuccin.nix
     ./plugins/lsp.nix
+    ./plugins/illuminate.nix
+    ./plugins/lualine.nix
     ./plugins/cmp.nix
     ./plugins/treesitter.nix
     ./plugins/telescope.nix
