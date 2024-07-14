@@ -6,14 +6,14 @@
       pattern = "*";
     }
     {
-      command = "set cinkeys =-0#";
+      command = "set cinkeys-=0#";
       event = "FileType";
-      pattern = "*.nix";
+      pattern = "*";
     }
     {
       command = "set indentkeys-=0#";
       event = "FileType";
-      pattern = "*.nix";
+      pattern = "*";
     }
     {
       callback.__raw = ''

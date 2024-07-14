@@ -14,11 +14,13 @@
 
     smartindent = false;
     cindent = true;
+
+    smartcase = true;
+    ignorecase = true;
+
     termguicolors = true;
     hlsearch = false;
     incsearch = true;
-    ignorecase = true;
-    smartcase = true;
     scrolloff = 8;
     signcolumn = "yes";
     updatetime = 50;
