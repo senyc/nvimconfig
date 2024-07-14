@@ -47,6 +47,12 @@ in {
       desc = "add inverse mapping for J (pulls line from below to current line)";
     }
     {
+      action = ''"+y'';
+      key = "<leader>y";
+      mode = ["n" "v"];
+      desc = "copy to system clipboard";
+    }
+    {
       action = ''"+y$'';
       key = "<leader>Y";
       mode = ["n" "v"];
