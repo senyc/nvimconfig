@@ -30,19 +30,5 @@
         "*.ts"
       ];
     }
-    {
-      callback.__raw = ''
-        function()
-          vim.keymap.set('n', '<leader>=', ':w<cr>:silent !rubyfmt -i %<cr>', {buffer = true, silent = true})
-        end
-      '';
-      event = [
-        "BufEnter"
-        "BufWinEnter"
-      ];
-      pattern = [
-        "*.rb"
-      ];
-    }
   ];
 }
