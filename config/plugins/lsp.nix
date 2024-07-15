@@ -26,8 +26,9 @@
       clangd.enable = true;
       cssls.enable = true;
       gopls.enable = true;
-      lua-ls.enable = true;
-      typos-lsp = {
+      typos-lsp.enable = true;
+      solargraph.enable = true;
+      lua-ls = {
         enable = true;
         extraOptions = {
           settings = {
