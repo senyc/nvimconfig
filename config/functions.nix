@@ -13,21 +13,6 @@
       return result
     end
 
-    function GetStatusLineGitInformation()
-      local gitdir = GetSearchDir():match("[\\/]([^\\/]+)$")
-
-      local handler = io.popen 'git branch --show-current 2>/dev/null'
-      if not handler then
-        return "n/a"
-      end
-      local result = handler:read('*l')
-      if not result then
-        return gitdir .. "/"
-      end
-      return gitdir .. "/" .. result
-      
-    end
-
     function RenameCurrentFile()
       local filename = vim.api.nvim_buf_get_name(0)
       local basename = filename:match('^.+/(.+)$')
@@ -59,22 +44,5 @@
         end
       end)
     end
-
--- function GetFormattedPath()
---       local handler = io.popen 'git branch --show-current 2>/dev/null'
---       if not handler then
---         local result = os.getenv("HOME") or os.getenv("USERPROFILE") or ""
---       else
---         local result = handler:read('*l')
---         if not result then
---           local result = os.getenv("HOME") or os.getenv("USERPROFILE") or ""
---         end
---       end
---   local curr_dir = vim.api.nvim_buf_get_name(0)
---   if result ~= "" then
---     result = curr_dir:gsub(result, "~")
---   end
---   return result
--- end
   '';
 }
