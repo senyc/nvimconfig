@@ -12,6 +12,7 @@
 
     ./plugins/catppuccin.nix
     ./plugins/lsp.nix
+    ./plugins/harpoon.nix
     ./plugins/illuminate.nix
     ./plugins/lualine.nix
     ./plugins/cmp.nix
