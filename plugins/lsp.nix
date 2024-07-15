@@ -79,7 +79,6 @@
 
   extraPackages = with pkgs; [
     alejandra
-    rubyfmt
     nodePackages.prettier
   ];
 
