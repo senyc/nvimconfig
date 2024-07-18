@@ -1,25 +1,10 @@
-{pkgs, ...}: {
+{
   plugins = {
-    luasnip = {
-      enable = true;
-      extraConfig = {
-        enable_autosnippets = true;
-        store_selection_keys = "<Tab>";
-      };
-      fromVscode = [
-        {
-          lazyLoad = true;
-          paths = "${pkgs.vimPlugins.friendly-snippets}";
-        }
-      ];
-    };
+    cmp-cmdline.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
       settings = {
-        experimental = {
-          ghost_text = true;
-        };
         mapping = {
           __raw = ''
             cmp.mapping.preset.insert({
@@ -34,11 +19,7 @@
           {name = "path";}
           {name = "luasnip";}
           {name = "buffer";}
-          {name = "cmdline";}
         ];
-        snippet = {
-          expand = "function(args) require('luasnip').lsp_expand(args.body) end";
-        };
         window = {
           completion = {
             border = "rounded";
@@ -50,7 +31,6 @@
         };
         performance = {
           debounce = 60;
-          fetching_timeout = 200;
           max_view_entries = 30;
         };
       };
