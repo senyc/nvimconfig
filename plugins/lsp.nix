@@ -22,6 +22,7 @@
     };
 
     servers = {
+      terraformls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
       cssls.enable = true;
