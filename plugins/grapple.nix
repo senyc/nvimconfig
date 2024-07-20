@@ -28,7 +28,7 @@ in
         action = "<cmd>Grapple toggle<cr>";
       }
       {
-        key = "<leader>hl";
+        key = "<c-h>";
         action = "<cmd>Grapple toggle_tags<cr>";
       }
       {
