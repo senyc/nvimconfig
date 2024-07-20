@@ -44,13 +44,11 @@ in {
     {
       key = "<leader>jn";
       action = "<cmd>Gitsigns next_hunk<cr>";
-      mode = "n";
       desc = "go to next change hunk in file";
     }
     {
       key = "<leader>jp";
       action = "<cmd>Gitsigns prev_hunk<cr>";
-      mode = "n";
       desc = "go to prev change hunk in file";
     }
   ];

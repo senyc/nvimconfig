@@ -60,35 +60,29 @@ in
       {
         key = "<leader>s";
         action = ":lua GitSearch()<cr>";
-        mode = "n";
         desc = "search git directory, showing untracked files";
       }
       {
         key = "<leader>g";
         action = ":lua GrepSearch()<cr>";
-        mode = "n";
         desc = "live grep search";
       }
       {
         key = "<leader>tr";
         action = "<cmd>Telescope resume<cr>";
-        mode = "n";
         desc = "resume previous telescope session";
       }
       {
         key = "<leader>cf";
         action = "<cmd>cclose<cr><cmd>Telescope quickfix<cr>";
-        mode = "n";
       }
       {
         key = "<leader>of";
         action = "<cmd>Telescope oldfiles<cr>";
-        mode = "n";
       }
       {
         key = "<leader>fg";
         action = ":lua GrepStringSearch()<cr>";
-        mode = "n";
       }
     ];
 

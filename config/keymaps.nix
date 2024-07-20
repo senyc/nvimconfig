@@ -7,43 +7,36 @@ in {
     {
       action = "<c-d>zz";
       key = "<c-d>";
-      mode = "n";
       desc = "center screen on <c-d>";
     }
     {
       action = "<c-u>zz";
       key = "<c-u>";
-      mode = "n";
       desc = "center screen on <c-u>";
     }
     {
       action = "nzzzv";
       key = "n";
-      mode = "n";
       desc = "center screen on going to next search result ";
     }
     {
       action = "Nzzzv";
       key = "N";
-      mode = "n";
       desc = "center screen on going to previous search result ";
     }
     {
       action = "o<esc>";
       key = "go";
-      mode = "n";
       desc = "add new line below cursor";
     }
     {
       action = "O<esc>";
       key = "gO";
-      mode = "n";
       desc = "add new line above cursor";
     }
     {
       action = "a<cr><esc>";
       key = "<c-j>";
-      mode = "n";
       desc = "add inverse mapping for J (pulls line from below to current line)";
     }
     {
@@ -85,37 +78,31 @@ in {
     {
       action = ":cnext<cr>zz";
       key = "<leader>;";
-      mode = "n";
       desc = "navigates to next quickfix item, centering the screen";
     }
     {
       action = "<cmd>cprev<cr>zz";
       key = "<leader>,";
-      mode = "n";
       desc = "navigates to previous quickfix item, centering the screen";
     }
     {
       action = "<cmd>cclose<cr>";
       key = "<leader>cc";
-      mode = "n";
       desc = "quickfix close";
     }
     {
       action = "<cmd>copen<cr>";
       key = "<leader>co";
-      mode = "n";
       desc = "quickfix open";
     }
     {
       action = ":lua RenameCurrentFile()<cr>";
       key = "<leader>rn";
-      mode = "n";
       desc = "rename current file";
     }
     {
       action = ":lua DeleteCurrentFile()<cr>";
       key = "<leader>rd";
-      mode = "n";
       desc = "Remove current buffer and associated file";
     }
   ];
