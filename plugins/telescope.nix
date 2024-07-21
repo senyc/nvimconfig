@@ -28,7 +28,9 @@ in
             "--line-number"
             "--column"
             "--smart-case"
+            # Display dot and gitignore files
             "--hidden"
+            "--no-ignore"
           ];
           mappings = {
             i = {
