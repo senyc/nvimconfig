@@ -22,7 +22,10 @@
     };
 
     servers = {
-      terraformls.enable = true;
+      terraformls = {
+        enable = true;
+        filetypes = ["terraform" "hcl" "tf"];
+      };
       bashls.enable = true;
       clangd.enable = true;
       cssls.enable = true;
