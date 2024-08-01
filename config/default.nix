@@ -13,6 +13,7 @@
     ../plugins/catppuccin.nix
     ../plugins/lsp.nix
     ../plugins/grapple.nix
+    ../plugins/marks-nvim.nix
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
     ../plugins/cmp.nix

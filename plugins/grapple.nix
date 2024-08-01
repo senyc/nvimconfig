@@ -32,23 +32,23 @@ in
         action = "<cmd>Grapple toggle_tags<cr>";
       }
       {
-        key = "<leader>ha";
+        key = "<leader>1";
         action = "<cmd>Grapple select index=1<cr>";
       }
       {
-        key = "<leader>hs";
+        key = "<leader>2";
         action = "<cmd>Grapple select index=2<cr>";
       }
       {
-        key = "<leader>hd";
+        key = "<leader>3";
         action = "<cmd>Grapple select index=3<cr>";
       }
       {
-        key = "<leader>hf";
+        key = "<leader>4";
         action = "<cmd>Grapple select index=4<cr>";
       }
       {
-        key = "<leader>hg";
+        key = "<leader>5";
         action = "<cmd>Grapple select index=5<cr>";
       }
     ];
