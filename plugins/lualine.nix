@@ -8,7 +8,7 @@
       right = "";
     };
     sections = {
-      lualine_a = ["GetProjectDir()"];
+      lualine_a = [''vim.fn.getcwd():gsub(".*/", "")''];
       lualine_b = ["branch"];
       lualine_c = [
         {

@@ -52,7 +52,7 @@ in
       }
       {
         key = "<leader>g";
-        action = ":lua require('telescope.builtin').live_grep { cwd = GetSearchDir(), hidden = true }<cr>";
+        action = ":lua require('telescope.builtin').live_grep {hidden = true }<cr>";
         desc = "live grep search";
       }
       {
@@ -68,8 +68,16 @@ in
         action = "<cmd>Telescope resume<cr>";
       }
       {
+        key = "<leader>tb";
+        action = "<cmd>Telescope buffers<cr>";
+      }
+      {
+        key = "<leader>th";
+        action = "<cmd>Telescope help_tags<cr>";
+      }
+      {
         key = "<leader>fg";
-        action = ":lua require('telescope.builtin').grep_string { cwd = GetSearchDir(), hidden = true }<cr>";
+        action = ":lua require('telescope.builtin').grep_string {hidden = true }<cr>";
       }
     ];
 

@@ -25,7 +25,6 @@
 
     completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
 
-    autochdir = true;
     swapfile = false;
     backup = false;
     history = 10000;
