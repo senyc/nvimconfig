@@ -2,14 +2,14 @@
   plugins.lualine = {
     enable = true;
     theme = "catppuccin";
-    iconsEnabled = true;
+    iconsEnabled = false;
     componentSeparators = {
       left = "";
       right = "";
     };
     sections = {
-      lualine_a = ["mode"];
-      lualine_b = ["branch" "diff"];
+      lualine_a = ["GetProjectDir()"];
+      lualine_b = ["branch"];
       lualine_c = [
         {
           name = "filename";
@@ -21,8 +21,7 @@
             path = 4;
           };
         }
-        # ''"󰛢" .. require('grapple').name_or_index()''
-         ''require('grapple').name_or_index()''
+        ''require('grapple').name_or_index()''
       ];
 
       lualine_x = ["encoding"];
