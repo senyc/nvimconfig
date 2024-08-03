@@ -64,6 +64,10 @@ in
         action = "<cmd>Telescope oldfiles<cr>";
       }
       {
+        key = "<leader>tr";
+        action = "<cmd>Telescope resume<cr>";
+      }
+      {
         key = "<leader>fg";
         action = ":lua require('telescope.builtin').grep_string { cwd = GetSearchDir(), hidden = true }<cr>";
       }
