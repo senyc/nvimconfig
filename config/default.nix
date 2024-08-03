@@ -9,9 +9,9 @@
     ./autocommand.nix
     ./functions.nix
     ./filetype.nix
-
     ../plugins/catppuccin.nix
     ../plugins/lsp.nix
+    ../plugins/toggleterm.nix
     ../plugins/grapple.nix
     ../plugins/marks-nvim.nix
     ../plugins/illuminate.nix

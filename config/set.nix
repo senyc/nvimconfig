@@ -1,6 +1,5 @@
 {
   opts = {
-    spell = true;
 
     number = true;
     relativenumber = true;
@@ -22,7 +21,7 @@
     incsearch = true;
     scrolloff = 8;
     signcolumn = "yes";
-    updatetime = 50; # faster completion (4000ms default)
+    updatetime = 50;
 
     completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
 
@@ -37,6 +36,10 @@
     conceallevel = 0;
     grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
+
+    spelloptions = "camel";
+    spelllang = "en_us";
+    spell = true;
   };
 
   globals = {
@@ -47,5 +50,6 @@
     netrw_list_hide = ''\.\./,\./,\.git/,__pycache__/'';
     netrw_banner = 0;
   };
+
   clipboard.providers.wl-copy.enable = true;
 }

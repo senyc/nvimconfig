@@ -22,15 +22,11 @@
     };
 
     servers = {
-      terraformls = {
-        enable = true;
-        filetypes = ["terraform" "hcl" "tf"];
-      };
+      terraformls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
       cssls.enable = true;
       gopls.enable = true;
-      typos-lsp.enable = true;
       solargraph.enable = true;
       lua-ls = {
         enable = true;
