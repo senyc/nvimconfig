@@ -7,9 +7,10 @@ in {
 
   keymaps = utils.defaultMap [
     {
-      action = ":ToggleTerm direction=float<cr>";
+      action = "<cmd>ToggleTerm direction=float<cr>";
       key = "<c-;>";
       desc = "Launch floating toggleterm instance";
+      mode = ["n" "i"];
     }
   ];
   extraConfigLua = ''
