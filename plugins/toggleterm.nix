@@ -8,7 +8,7 @@ in {
   keymaps = utils.defaultMap [
     {
       action = "<cmd>2ToggleTerm name=Ephemeral direction=float<cr>";
-      key = "<c-/>";
+      key = "<c-;>";
       desc = "Launch floating ephemeral toggleterm instance";
       mode = ["n" "i"];
     }
@@ -21,7 +21,7 @@ in {
   ];
   extraConfigLua = ''
       local Terminal = require 'toggleterm.terminal'.Terminal
-      local persistent_term = Terminal:new({name= "Persistent", direction= "float", float_opts = { border = "double"} })
+      local persistent_term = Terminal:new({display_name="Persistent", direction="float", float_opts = { border = "double"} })
     function _G.persistent_terminal_toggle()
         persistent_term:toggle()
     end
@@ -29,7 +29,7 @@ in {
     -- Toggles (not kills) active terminal session
     function _G.set_terminal_keymaps()
       local opts = {noremap = true, silent = true}
-      vim.api.nvim_buf_set_keymap(0, 't', '<c-/>', "<cmd>close<cr>", opts)
+      vim.api.nvim_buf_set_keymap(0, 't', '<c-;>', "<cmd>2ToggleTerm<cr>", opts)
       vim.api.nvim_buf_set_keymap(0, 't', '<a-t>', "<cmd>lua persistent_terminal_toggle()<cr>", opts)
     end
 
