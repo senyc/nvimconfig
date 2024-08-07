@@ -23,13 +23,15 @@ in {
       local Terminal = require 'toggleterm.terminal'.Terminal
       local persistent_term = Terminal:new({display_name="Persistent", direction="float", float_opts = { border = "double"} })
     function _G.persistent_terminal_toggle()
-        persistent_term:toggle()
+      persistent_term:toggle()
     end
 
     -- Toggles (not kills) active terminal session
     function _G.set_terminal_keymaps()
       local opts = {noremap = true, silent = true}
-      vim.api.nvim_buf_set_keymap(0, 't', '<c-;>', "<cmd>2ToggleTerm<cr>", opts)
+
+      vim.api.nvim_buf_set_keymap(0, 't', '<c-;>', "<cmd>close<cr>", opts)
+      vim.api.nvim_buf_set_keymap(0, 't', '<c-/>', [[<C-\><C-n>]], opts)
       vim.api.nvim_buf_set_keymap(0, 't', '<a-t>', "<cmd>lua persistent_terminal_toggle()<cr>", opts)
     end
 
