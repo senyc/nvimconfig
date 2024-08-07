@@ -11,6 +11,7 @@
     ./filetype.nix
     ../plugins/catppuccin.nix
     ../plugins/lsp.nix
+    ../plugins/git-worktree.nix
     ../plugins/toggleterm.nix
     ../plugins/grapple.nix
     ../plugins/marks-nvim.nix
