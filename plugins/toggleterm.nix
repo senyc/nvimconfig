@@ -18,6 +18,12 @@ in {
       desc = "Launch floating persistent toggleterm instance";
       mode = ["n" "i"];
     }
+    {
+      action = "<cmd>3TermExec cmd='git log -p %' direction=float name='git history'<cr>";
+      key = "<leader>td";
+      desc = "Get log patches of the current file";
+      mode = "n";
+    }
   ];
   extraConfigLua = ''
       local Terminal = require 'toggleterm.terminal'.Terminal
