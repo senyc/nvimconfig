@@ -1,5 +1,24 @@
 {
   extraConfigLua = ''
+    function GitProjectdir()
+      local handler
+      handler = io.popen 'git rev-parse --git-common-dir 2>/dev/null'
+      local git_common_dir = handler:read('*l')
+
+      -- If current directory is not a worktree then return directory name containing .git file
+      if git_common_dir ~= '.git' then
+        return git_common_dir:gsub(".*/", "")
+      end
+
+      handler = io.popen 'git rev-parse --show-toplevel 2>/dev/null'
+      local git_top_level = handler:read('*l')
+      if not git_top_level then
+        return "n/a"
+      end
+        return git_top_level:gsub(".*/", "")
+
+    end
+
     function RenameCurrentFile()
       local filename = vim.api.nvim_buf_get_name(0)
       local shortened_file = filename:gsub(os.getenv('HOME'), '~')
