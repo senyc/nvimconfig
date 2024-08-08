@@ -86,4 +86,31 @@ in
       ripgrep
       fd
     ];
+
+    extraConfigLua = ''
+      local directory_picker = function(name, cmd)
+        require("telescope.pickers").new({}, {
+          prompt_title = name,
+          finder = require("telescope.finders").new_table({
+            results = require("telescope.utils").get_os_command_output(cmd),
+          }),
+          previewer = require("telescope.previewers").vim_buffer_cat.new({}),
+          sorter = require("telescope.sorters").get_fuzzy_file(),
+          attach_mappings = function(prompt_bufnr)
+            require("telescope.actions.set").select:replace(function(_)
+              local entry = require('telescope.actions.state').get_selected_entry()
+              require('telescope.actions').close(prompt_bufnr)
+              local dir = require("telescope.from_entry").path(entry)
+              vim.api.nvim_set_current_dir(dir)
+            end)
+            return true
+          end,
+        }):find()
+      end
+
+      vim.keymap.set("n", "<leader>fd", function()
+        local command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+        directory_picker("Project Search", command)
+      end)
+    '';
   }
