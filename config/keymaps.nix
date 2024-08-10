@@ -105,5 +105,10 @@ in {
       key = "<leader>rd";
       desc = "Remove current buffer and associated file";
     }
+    {
+      action = "<cmd>Ex<cr>";
+      key = "<leader>fe";
+      desc = "Starts file explorer (netrw)";
+    }
   ];
 }
