@@ -38,7 +38,7 @@ in {
 
       -- Kill the terminal
       vim.api.nvim_buf_set_keymap(0, 't', '<c-;>', "<cmd>close<cr>", opts)
-      vim.api.nvim_buf_set_keymap(0, 't', '<a-x>', "<cmd>bdelete!<cr>", opts)
+      vim.api.nvim_buf_set_keymap(0, 't', '<a-z>', "<cmd>bdelete!<cr>", opts)
 
       vim.api.nvim_buf_set_keymap(0, 't', '<c-/>', [[<C-\><C-n>]], opts)
       vim.api.nvim_buf_set_keymap(0, 't', '<a-t>', "<cmd>lua persistent_terminal_toggle()<cr>", opts)
