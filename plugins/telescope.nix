@@ -95,7 +95,7 @@ in
             results = require("telescope.utils").get_os_command_output(cmd),
           }),
           previewer = require("telescope.previewers").vim_buffer_cat.new({}),
-          sorter = require("telescope.sorters").get_fuzzy_file(),
+          sorter = require("telescope.sorters").get_fzy_sorter(),
           attach_mappings = function(prompt_bufnr)
             require("telescope.actions.set").select:replace(function(_)
               local entry = require('telescope.actions.state').get_selected_entry()
