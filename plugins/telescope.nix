@@ -47,8 +47,8 @@ in
     keymaps = utils.defaultMap [
       {
         key = "<leader>s";
-        action = ":lua require('telescope.builtin').git_files { hidden = true, show_untracked = true }<cr>";
-        desc = "search git directory, showing untracked files";
+        action = ":lua require('telescope.builtin').find_files { no_ignore = true, hidden = true, show_untracked = true }<cr>";
+        desc = "search with cwd as root";
       }
       {
         key = "<leader>g";

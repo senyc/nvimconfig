@@ -1,6 +1,5 @@
 {
   opts = {
-
     number = true;
     relativenumber = true;
     cursorline = true;
@@ -33,7 +32,7 @@
     cursorlineopt = "number";
     wrap = false;
     conceallevel = 0;
-    grepprg = ''rg --hidden --iglob '!**/.git/**' --vimgrep'';
+    grepprg = ''rg --hidden --smart-case --no-ignore --iglob '!**/.git/**' --vimgrep'';
     virtualedit = "block";
 
     spelloptions = "camel";
