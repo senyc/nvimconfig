@@ -21,6 +21,7 @@ in
             "^.git/"
             "node_modules/"
             "dist/"
+            ".next/"
           ];
           vimgrep_arguments = [
             "rg"
