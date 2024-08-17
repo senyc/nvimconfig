@@ -9,9 +9,10 @@
     ./autocommand.nix
     ./functions.nix
     ./filetype.nix
+
     ../plugins/catppuccin.nix
     ../plugins/lsp.nix
-    ../plugins/git-worktree.nix
+    ../plugins/undotree.nix
     ../plugins/toggleterm.nix
     ../plugins/grapple.nix
     ../plugins/marks-nvim.nix
