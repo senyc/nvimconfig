@@ -19,7 +19,7 @@ in
     ];
     extraConfigLua = ''
       require 'grapple'.setup {
-        scope = 'git',
+        scope = 'git_branch',
         icons = false,
           statusline = {
             icon = "",
