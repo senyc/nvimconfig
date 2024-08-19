@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  # Allow lsp client to distinguish helm manifests
+  plugins.helm.enable = true;
   plugins.lsp = {
     enable = true;
 
@@ -73,6 +75,7 @@
       pyright.enable = true;
       tailwindcss.enable = true;
       tsserver.enable = true;
+      helm-ls.enable = true;
       yamlls.enable = true;
     };
   };
