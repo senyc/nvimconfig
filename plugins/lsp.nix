@@ -75,8 +75,16 @@
       pyright.enable = true;
       tailwindcss.enable = true;
       tsserver.enable = true;
-      helm-ls.enable = true;
-      yamlls.enable = true;
+      helm-ls = {
+        enable = true;
+        settings = {
+          yamlls = {
+            enabled = false;
+          };
+        };
+      };
+      # Turns into a wall of red w/ helm charts
+      yamlls.enable = false;
     };
   };
 
