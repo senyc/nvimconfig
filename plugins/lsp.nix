@@ -84,7 +84,7 @@
         };
       };
       # Turns into a wall of red w/ helm charts
-      yamlls.enable = false;
+      yamlls.enable = true;
     };
   };
 
