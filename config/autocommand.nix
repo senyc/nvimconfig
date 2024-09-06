@@ -18,7 +18,7 @@
     {
       callback.__raw = ''
         function()
-          vim.keymap.set('n', '<leader>=', ':w<cr>:silent !prettier --single-quote --jsx-single-quote --write %<cr>', {buffer = true, silent = true})
+          vim.keymap.set('n', '<leader>=', ':w<cr>:silent !prettier --write %<cr>', {buffer = true, silent = true})
         end
       '';
       event = [

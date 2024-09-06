@@ -41,12 +41,12 @@
   };
 
   globals = {
-    netrw_bufsettings = ''noma nomod nu bl nowrap ro'';
+    # add line numbers
+    netrw_bufsettings = "nu";
     # On preview (p) open vertically
     netrw_preview = 1;
     netrw_sizestyle = "H";
     netrw_list_hide = ''\.\./,\./,\.git/,__pycache__/'';
-    netrw_banner = 0;
   };
 
   clipboard.providers.wl-copy.enable = true;

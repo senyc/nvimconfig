@@ -35,11 +35,6 @@ in {
       desc = "add new line above cursor";
     }
     {
-      action = "a<cr><esc>";
-      key = "<c-j>";
-      desc = "add inverse mapping for J (pulls line from below to current line)";
-    }
-    {
       action = ''"+y'';
       key = "<leader>y";
       mode = ["n" "v"];
@@ -109,6 +104,12 @@ in {
       action = "<cmd>Ex<cr>";
       key = "<leader>fe";
       desc = "Starts file explorer (netrw)";
+    }
+    {
+      # C-w register contains word under cursor
+      action = '':%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>'';
+      key = "<leader>rw";
+      desc = "Replace word in current buffer";
     }
   ];
 }
