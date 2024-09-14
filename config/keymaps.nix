@@ -47,37 +47,13 @@ in {
       desc = "copy rest of the line to system clipboard";
     }
     {
-      action = ''"+P'';
-      key = "<leader>P";
-      mode = ["n" "v"];
-      desc = ''pastes system clipboard over selected, not updating " buffer'';
-    }
-    {
-      action = ''"+p'';
-      key = "<leader>p";
-      mode = ["n" "v"];
-      desc = "pastes system clipboard";
-    }
-    {
-      action = ''"+d'';
-      key = "<leader>d";
-      mode = ["n" "v"];
-      desc = "cuts selected into system clipboard";
-    }
-    {
-      action = ''"_d'';
-      key = "<leader>x";
-      mode = ["n" "v"];
-      desc = "deletes to the null buffer";
-    }
-    {
       action = ":cnext<cr>zz";
-      key = "<leader>;";
+      key = "<c-j>";
       desc = "navigates to next quickfix item, centering the screen";
     }
     {
       action = "<cmd>cprev<cr>zz";
-      key = "<leader>,";
+      key = "<c-k>";
       desc = "navigates to previous quickfix item, centering the screen";
     }
     {
@@ -110,6 +86,7 @@ in {
       action = '':%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>'';
       key = "<leader>rw";
       desc = "Replace word in current buffer";
+      options.silent = false;
     }
   ];
 }

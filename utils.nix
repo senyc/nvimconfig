@@ -4,8 +4,8 @@
       {
         mode = v.mode or "n";
         options = {
-          noremap = true;
-          silent = true;
+          noremap = v.options.noremap or true;
+          silent = v.options.silent or true;
           desc = v.desc or "";
         };
       }

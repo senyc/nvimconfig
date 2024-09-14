@@ -26,8 +26,8 @@ in
           vimgrep_arguments = [
             "rg"
             "--no-heading"
-            "--with-filename"
             "--line-number"
+            "--vimgrep"
             "--column"
             "--smart-case"
             # Display dot and gitignored files
@@ -57,24 +57,8 @@ in
         desc = "live grep search";
       }
       {
-        key = "<leader>cf";
-        action = "<cmd>cclose<cr><cmd>Telescope quickfix<cr>";
-      }
-      {
-        key = "<leader>of";
-        action = "<cmd>Telescope oldfiles<cr>";
-      }
-      {
         key = "<leader>tr";
         action = "<cmd>Telescope resume<cr>";
-      }
-      {
-        key = "<leader>tb";
-        action = "<cmd>Telescope buffers<cr>";
-      }
-      {
-        key = "<leader>th";
-        action = "<cmd>Telescope help_tags<cr>";
       }
       {
         key = "<leader>fg";
