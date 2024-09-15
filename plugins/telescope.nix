@@ -93,7 +93,7 @@ in
         }):find()
       end
 
-      vim.keymap.set("n", "<leader>fd", function()
+      vim.keymap.set("n", "<leader>pf", function()
         local command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
         directory_picker("Project Search", command)
       end)
