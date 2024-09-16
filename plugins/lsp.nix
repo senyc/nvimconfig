@@ -22,6 +22,8 @@
         "<leader>=" = "format";
         "gt" = "type_definition";
         "gT" = "typehierarchy";
+        "<leader>fo" = "outgoing_calls";
+        "<leader>fi" = "incoming_calls";
       };
     };
 

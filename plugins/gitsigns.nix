@@ -40,6 +40,7 @@ in {
       };
     };
   };
+
   keymaps = utils.defaultMap [
     {
       key = "<leader>jn";

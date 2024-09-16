@@ -19,6 +19,7 @@ in
     ];
     extraConfigLua = ''
       require 'grapple'.setup {
+        -- Grappled files, do not persist between git branches
         scope = 'git_branch',
         icons = false,
           statusline = {
@@ -31,10 +32,12 @@ in
         {
           key = "<c-e>";
           action = "<cmd>Grapple toggle<cr>";
+          desc = "toggle grapple for file";
         }
         {
           key = "<c-h>";
           action = "<cmd>Grapple toggle_tags<cr>";
+          desc = "toggle grapple display";
         }
       ]
       ++ map (num: {
