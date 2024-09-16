@@ -20,6 +20,8 @@
         "<leader>a" = "code_action";
         "gr" = "references";
         "<leader>=" = "format";
+        "gt" = "type_definition";
+        "gT" = "typehierarchy";
       };
     };
 
