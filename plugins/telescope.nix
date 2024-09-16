@@ -57,12 +57,14 @@ in
         desc = "live grep search";
       }
       {
-        key = "<leader>tr";
+        key = "<leader>fr";
         action = "<cmd>Telescope resume<cr>";
+        desc = "Finder resume";
       }
       {
-        key = "<leader>fg";
+        key = "<leader>fw";
         action = ":lua require('telescope.builtin').grep_string {hidden = true }<cr>";
+        desc = "Find word in project";
       }
     ];
 
@@ -95,7 +97,7 @@ in
 
       vim.keymap.set("n", "<leader>pf", function()
         local command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
-        directory_picker("Project Search", command)
+        directory_picker("Project Find", command)
       end)
     '';
   }
