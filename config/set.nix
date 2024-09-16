@@ -16,8 +16,6 @@
     smartcase = true;
     ignorecase = true;
     termguicolors = true;
-    hlsearch = false;
-    incsearch = true;
     scrolloff = 8;
     signcolumn = "yes:1";
     updatetime = 50;
