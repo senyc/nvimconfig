@@ -15,7 +15,7 @@
         owner = "senyc";
         repo = "gh.nvim";
         rev = "main";
-        hash = "sha256-Pp0BujTXJMjDJjg8FNy2nT07F0u7XVMFpMrYn5voC2I=";
+        hash = "sha256-PdjESjEAB2+mXon0oaPdKFJX0Iig5kUJowHE8CXmlQY=";
       };
     })
   ];
