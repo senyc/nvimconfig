@@ -10,6 +10,7 @@
     ./functions.nix
     ./filetype.nix
 
+    ../plugins/devicons.nix
     ../plugins/catppuccin.nix
     ../plugins/lsp.nix
     ../plugins/undotree.nix
@@ -23,7 +24,6 @@
     ../plugins/gitsigns.nix
     ../plugins/comment.nix
     ../plugins/nvim-surround.nix
-    ../plugins/devicons.nix
     ../plugins/gh-nvim.nix
   ];
 }

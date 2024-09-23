@@ -35,7 +35,7 @@
       -- whether to register the @username and #issue_number omnifunc completion
       -- in buffers which start with .git/
       git_buffer_completion = true,
-      icon_set = "nerd",
+      icon_set = "default",
       icon_set_custom = nil,
       -- defines keymaps in gh.nvim buffers.
       keymaps = {
