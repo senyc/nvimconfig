@@ -23,6 +23,7 @@
     ../plugins/gitsigns.nix
     ../plugins/comment.nix
     ../plugins/nvim-surround.nix
+    ../plugins/devicons.nix
     ../plugins/gh-nvim.nix
   ];
 }
