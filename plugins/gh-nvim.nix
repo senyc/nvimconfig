@@ -12,10 +12,10 @@
     (pkgs.vimUtils.buildVimPlugin {
       name = "gh.nvim";
       src = pkgs.fetchFromGitHub {
-        owner = "ldelossa";
+        owner = "senyc";
         repo = "gh.nvim";
         rev = "main";
-        hash = "sha256-5MWv/TpJSJfPY3y2dC1f2T/9sP4wn0kZ0Sed5OOFM5c=";
+        hash = "sha256-Pp0BujTXJMjDJjg8FNy2nT07F0u7XVMFpMrYn5voC2I=";
       };
     })
   ];
