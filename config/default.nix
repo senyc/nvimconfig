@@ -3,7 +3,6 @@
     ./set.nix
     ./keymaps.nix
 
-    ./highlight.nix
     ./diagnostic.nix
 
     ./autocommand.nix
@@ -11,7 +10,6 @@
     ./filetype.nix
 
     ../plugins/devicons.nix
-    ../plugins/catppuccin.nix
     ../plugins/lsp.nix
     ../plugins/undotree.nix
     ../plugins/toggleterm.nix

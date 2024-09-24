@@ -1,7 +1,7 @@
 {
   plugins.lualine = {
     enable = true;
-    theme = "catppuccin";
+    theme = "moonfly";
     iconsEnabled = false;
     componentSeparators = {
       left = "";
