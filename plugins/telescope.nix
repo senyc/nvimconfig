@@ -47,24 +47,24 @@ in
     };
     keymaps = utils.defaultMap [
       {
-        key = "<leader>s";
+        key = "<leader>sf";
         action = ":lua require('telescope.builtin').find_files { no_ignore = true, hidden = true, show_untracked = true }<cr>";
-        desc = "search with cwd as root";
+        desc = "Search file";
       }
       {
-        key = "<leader>g";
+        key = "<leader>sg";
         action = ":lua require('telescope.builtin').live_grep {hidden = true }<cr>";
-        desc = "live grep search";
+        desc = "Search grep";
       }
       {
-        key = "<leader>fr";
+        key = "<leader>sr";
         action = "<cmd>Telescope resume<cr>";
         desc = "Finder resume";
       }
       {
-        key = "<leader>fw";
+        key = "<leader>sw";
         action = ":lua require('telescope.builtin').grep_string {hidden = true }<cr>";
-        desc = "Find word in project";
+        desc = "Search word";
       }
     ];
 
@@ -95,7 +95,7 @@ in
         }):find()
       end
 
-      vim.keymap.set("n", "<leader>pf", function()
+      vim.keymap.set("n", "<leader>cd", function()
         local command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
         directory_picker("Project Find", command)
       end)
