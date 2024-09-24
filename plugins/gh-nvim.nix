@@ -11,6 +11,7 @@ in {
         hash = "sha256-PUFPQA0LWXn2fjT8Cfy7SFX14hkbUH05mQF4enuxUo0=";
       };
     })
+    # Use my fork of the repo (which uses ssh host of git not ghcli)
     (pkgs.vimUtils.buildVimPlugin {
       name = "gh.nvim";
       src = pkgs.fetchFromGitHub {
