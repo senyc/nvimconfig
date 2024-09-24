@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  utils = import ../utils.nix;
+in {
   extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {
       name = "litee.nvim";
@@ -67,4 +69,57 @@
       }
     })
   '';
+
+  keymaps = utils.defaultMap [
+    {
+      action = "<cmd>GHOpenPR<cr>";
+      key = "<leader>gpo";
+      desc = "Github pr open";
+    }
+    {
+      action = "<cmd>GHClosePR<cr>";
+      key = "<leader>gpc";
+      desc = "Github pr close";
+    }
+    {
+      action = "<cmd>GHRefreshPr<cr>";
+      key = "<leader>gpr";
+      desc = "Github pr refresh";
+    }
+    {
+      action = "<cmd>GHStartReview<cr>";
+      key = "<leader>grs";
+      desc = "Github review start";
+    }
+    {
+      action = "<cmd>GHSubmitReview<cr>";
+      key = "<leader>gre";
+      desc = "Github review end";
+    }
+    {
+      action = "<cmd>GHCloseReview<cr>";
+      key = "<leader>grc";
+      desc = "Github review close";
+    }
+    {
+      action = "<cmd>GHDeleteReview<cr>";
+      key = "<leader>grd";
+      desc = "Github review delete";
+    }
+    {
+      action = "<cmd>GHCreateThread<cr>";
+      key = "<leader>gtc";
+      desc = "Github thread create";
+    }
+    {
+      action = "<cmd>GHNextThread<cr>";
+      key = "<leader>gtn";
+      desc = "Github thread next";
+    }
+    {
+      action = "<cmd>GHToggleThread<cr>";
+      key = "<leader>gtt";
+      desc = "Github thread toggle";
+    }
+  ];
 }
