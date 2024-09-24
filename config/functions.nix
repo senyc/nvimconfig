@@ -26,6 +26,8 @@
         -- Test for <C-c>
         if input ~= nil and not input:find "\3" and not input:find "\x03" then
           vim.cmd('saveas ' .. input)
+          -- Remove old file
+          vim.cmd('silent !rm ' .. '"' .. filename .. '"')
         end
       end)
     end

@@ -35,18 +35,6 @@ in {
       desc = "add new line above cursor";
     }
     {
-      action = ''"+y'';
-      key = "<leader>y";
-      mode = ["n" "v"];
-      desc = "copy to system clipboard";
-    }
-    {
-      action = ''"+y$'';
-      key = "<leader>Y";
-      mode = ["n" "v"];
-      desc = "copy rest of the line to system clipboard";
-    }
-    {
       action = ":cnext<cr>zz";
       key = "<c-j>";
       desc = "navigates to next quickfix item, centering the screen";

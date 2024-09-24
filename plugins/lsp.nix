@@ -6,24 +6,25 @@
 
     keymaps = {
       diagnostic = {
-        "<leader>dn" = "goto_next";
-        "<leader>dp" = "goto_prev";
+        "]d" = "goto_next";
+        "[d" = "goto_prev";
         "<leader>dq" = "setqflist";
         "<leader>do" = "open_float";
       };
       lspBuf = {
         "K" = "hover";
         "gd" = "definition";
-        "gD" = "implementation";
+        "gD" = "declaration";
         "<leader>fs" = "workspace_symbol";
-        "<leader>rs" = "rename";
-        "<leader>a" = "code_action";
+        "<leader>fi" = "implementation";
+        "<leader>fr" = "rename";
+        "<leader>fa" = "code_action";
+        "<leader>fc" = "incoming_calls";
+        "<leader>fo" = "outgoing_calls";
+        "<leader>ft" = "type_definition";
+        "<leader>fT" = "typehierarchy";
         "gr" = "references";
         "<leader>=" = "format";
-        "gt" = "type_definition";
-        "gT" = "typehierarchy";
-        "<leader>fo" = "outgoing_calls";
-        "<leader>fi" = "incoming_calls";
       };
     };
 
