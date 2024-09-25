@@ -43,12 +43,12 @@ in {
 
   keymaps = utils.defaultMap [
     {
-      key = "<leader>jn";
+      key = "]g";
       action = "<cmd>Gitsigns next_hunk<cr>";
       desc = "go to next change hunk in file";
     }
     {
-      key = "<leader>jp";
+      key = "[g";
       action = "<cmd>Gitsigns prev_hunk<cr>";
       desc = "go to prev change hunk in file";
     }

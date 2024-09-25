@@ -21,7 +21,6 @@ in
       require 'grapple'.setup {
         -- Grappled files, do not persist between git branches
         scope = 'git_branch',
-        icons = false,
           statusline = {
             icon = "",
           }
@@ -33,6 +32,7 @@ in
           key = "<c-e>";
           action = "<cmd>Grapple toggle<cr>";
           desc = "toggle grapple for file";
+          mode = ["i" "n"];
         }
         {
           key = "<c-h>";

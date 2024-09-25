@@ -11,6 +11,7 @@
       lspBuf = {
         "gd" = "definition";
         "gD" = "declaration";
+        "gr" = "references";
         "<leader>fs" = "workspace_symbol";
         "<leader>fi" = "implementation";
         "<leader>fr" = "rename";
@@ -19,8 +20,7 @@
         "<leader>fo" = "outgoing_calls";
         "<leader>ft" = "type_definition";
         "<leader>fT" = "typehierarchy";
-        "gr" = "references";
-        "<leader>=" = "format";
+        "<leader>ff" = "format";
       };
     };
 
