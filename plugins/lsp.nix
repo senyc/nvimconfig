@@ -6,13 +6,9 @@
 
     keymaps = {
       diagnostic = {
-        "]d" = "goto_next";
-        "[d" = "goto_prev";
         "<leader>dq" = "setqflist";
-        "<leader>do" = "open_float";
       };
       lspBuf = {
-        "K" = "hover";
         "gd" = "definition";
         "gD" = "declaration";
         "<leader>fs" = "workspace_symbol";
@@ -79,7 +75,7 @@
       };
       pyright.enable = true;
       tailwindcss.enable = true;
-      tsserver.enable = true;
+      ts-ls.enable = true;
       helm-ls = {
         enable = true;
         settings = {

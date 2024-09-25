@@ -2,6 +2,7 @@ let
   utils = import ../utils.nix;
 in
   {pkgs, ...}: {
+    plugins.web-devicons.enable = true;
     plugins.telescope = {
       enable = true;
       extensions = {

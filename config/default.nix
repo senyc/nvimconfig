@@ -9,7 +9,6 @@
     ./functions.nix
     ./filetype.nix
 
-    ../plugins/devicons.nix
     ../plugins/lsp.nix
     ../plugins/undotree.nix
     ../plugins/toggleterm.nix
@@ -17,10 +16,10 @@
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
     ../plugins/cmp.nix
+    ../plugins/web-devicons.nix
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
-    ../plugins/comment.nix
     ../plugins/nvim-surround.nix
     ../plugins/gh-nvim.nix
   ];

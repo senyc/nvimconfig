@@ -9,11 +9,9 @@
     softtabstop = 2;
     shiftwidth = 2;
     expandtab = true;
-
     cindent = true;
 
     smartcase = true;
-    termguicolors = true;
     signcolumn = "yes:1";
     incsearch = true;
     scrolloff = 8;
