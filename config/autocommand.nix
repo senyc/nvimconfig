@@ -1,19 +1,16 @@
 {
   autoCmd = [
     {
-      command = "set formatoptions-=cro";
+      command = ''setl formatoptions-=cro'';
       event = "FileType";
       pattern = "*";
+      desc = "Do not continue comments on next line in normal or insert mode";
     }
     {
-      command = "set cinkeys-=0#";
+      command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=r'';
       event = "FileType";
-      pattern = "*";
-    }
-    {
-      command = "set indentkeys-=0#";
-      event = "FileType";
-      pattern = "*";
+      pattern = "markdown";
+      desc = "Sets markdown lists and tasks to contine on enter";
     }
     {
       callback.__raw = ''
@@ -21,13 +18,12 @@
           vim.keymap.set('n', '<leader>ff', ':w<cr>:silent !prettier --write %<cr>', {buffer = true, silent = true})
         end
       '';
-      event = [
-        "BufEnter"
-        "BufWinEnter"
-      ];
+      event = "FileType";
       pattern = [
-        "*.tsx"
-        "*.ts"
+        "typescript"
+        "typescriptreact"
+        "javascript"
+        "javascriptreact"
       ];
     }
   ];

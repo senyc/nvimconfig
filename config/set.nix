@@ -4,29 +4,30 @@
     relativenumber = true;
     cursorline = true;
     cursorlineopt = "number";
+    signcolumn = "yes:1";
+
+    autoindent = true;
+    expandtab = true;
+    wrap = false;
+
+    spell = true;
 
     tabstop = 2;
     softtabstop = 2;
     shiftwidth = 2;
-    expandtab = true;
-    cindent = true;
 
     smartcase = true;
-    signcolumn = "yes:1";
     incsearch = true;
-    scrolloff = 8;
 
     completeopt = ["menuone" "noselect" "noinsert"];
 
     swapfile = false;
     history = 10000;
     undofile = true;
-    wrap = false;
-    spell = true;
   };
 
   globals = {
-    netrw_bufsettings = "nu";
+    netrw_bufsettings = "nu ro";
   };
 
   clipboard.providers.wl-copy.enable = true;
