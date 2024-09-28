@@ -7,7 +7,6 @@
 
     ./autocommand.nix
     ./functions.nix
-    ./filetype.nix
 
     ../plugins/lsp.nix
     ../plugins/undotree.nix

@@ -19,6 +19,7 @@
     smartcase = true;
     incsearch = true;
 
+    confirm = true;
     completeopt = ["menuone" "noselect" "noinsert"];
 
     swapfile = false;
@@ -29,6 +30,4 @@
   globals = {
     netrw_bufsettings = "nu ro";
   };
-
-  clipboard.providers.wl-copy.enable = true;
 }
