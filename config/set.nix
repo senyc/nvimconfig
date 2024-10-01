@@ -18,6 +18,7 @@
 
     smartcase = true;
     incsearch = true;
+    scrolloff = 10;
 
     confirm = true;
     completeopt = ["menuone" "noselect" "noinsert"];
