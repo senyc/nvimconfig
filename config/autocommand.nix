@@ -7,7 +7,8 @@
       desc = "Do not continue comments on next line in normal or insert mode";
     }
     {
-      command = ''setl comments+=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2'';
+      # Make sure we override comments otherwise be default they'll only be formatted like comments
+      command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2'';
       event = "FileType";
       pattern = "markdown";
       desc = "Sets markdown lists and tasks to contine on enter";
