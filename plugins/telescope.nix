@@ -39,6 +39,10 @@ in
             i = {
               "<esc>".__raw = "require('telescope.actions').close";
             };
+            i = {
+              # To quickly toggle telescope for file search if applicable
+              "<c-f>".__raw = "require('telescope.actions').close";
+            };
             n = {
               "<esc>".__raw = "require('telescope.actions').close";
             };
@@ -48,22 +52,23 @@ in
     };
     keymaps = utils.defaultMap [
       {
-        key = "<leader>sf";
+        key = "<c-f>";
         action = ":lua require('telescope.builtin').find_files { no_ignore = true, hidden = true, show_untracked = true }<cr>";
         desc = "Search file";
+        mode = ["n" "i"];
       }
       {
-        key = "<leader>sg";
+        key = "<leader>fg";
         action = ":lua require('telescope.builtin').live_grep {hidden = true }<cr>";
         desc = "Search grep";
       }
       {
-        key = "<leader>sr";
+        key = "<leader>fr";
         action = "<cmd>Telescope resume<cr>";
         desc = "Finder resume";
       }
       {
-        key = "<leader>sw";
+        key = "<leader>fw";
         action = ":lua require('telescope.builtin').grep_string {hidden = true }<cr>";
         desc = "Search word";
       }
@@ -96,8 +101,9 @@ in
         }):find()
       end
 
-      vim.keymap.set("n", "<leader>cd", function()
+      vim.keymap.set("n", "<leader>fp", function()
         local command = ""
+        -- Environment specific environment command that won't show personal projects in project search if on work host
         if os.getenv("HIDE_PERSONAL_PROJECTS") then
           command = {vim.o.shell, "-c", "find ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
         else

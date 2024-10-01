@@ -8,19 +8,21 @@
       diagnostic = {
         "<leader>dq" = "setqflist";
       };
+
       lspBuf = {
         "gd" = "definition";
         "gD" = "declaration";
         "gr" = "references";
-        "<leader>fs" = "workspace_symbol";
-        "<leader>fi" = "implementation";
-        "<leader>fr" = "rename";
-        "<leader>fa" = "code_action";
-        "<leader>fc" = "incoming_calls";
-        "<leader>fo" = "outgoing_calls";
-        "<leader>ft" = "type_definition";
-        "<leader>fT" = "typehierarchy";
-        "<leader>ff" = "format";
+        "<leader>a" = "code_action";
+        # "s" signifier meaning language _server_ protocol
+        "<leader>sr" = "rename";
+        "<leader>sf" = "format";
+        "<leader>st" = "type_definition";
+        "<leader>si" = "incoming_calls";
+        "<leader>so" = "outgoing_calls";
+        "<leader>ss" = "workspace_symbol";
+        "<leader>sI" = "implementation";
+        "<leader>sT" = "typehierarchy";
       };
     };
 

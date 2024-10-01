@@ -7,9 +7,9 @@ in {
 
   keymaps = utils.defaultMap [
     {
-      action = "<cmd>1ToggleTerm name=Ephemeral direction=float<cr>";
+      action = "<cmd>1ToggleTerm direction=float<cr>";
       key = "<a-t>";
-      desc = "Launch floating ephemeral toggleterm instance";
+      desc = "Launch floating toggleterm instance";
       mode = ["n" "i"];
     }
     {
