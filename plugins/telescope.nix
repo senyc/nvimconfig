@@ -97,7 +97,12 @@ in
       end
 
       vim.keymap.set("n", "<leader>cd", function()
-        local command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+        local command = ""
+        if os.getenv("HIDE_PERSONAL_PROJECTS") then
+          command = {vim.o.shell, "-c", "find ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+        else
+          command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+        end
         directory_picker("Project Find", command)
       end)
     '';
