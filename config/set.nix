@@ -2,6 +2,7 @@
   opts = {
     number = true;
     relativenumber = true;
+
     cursorline = true;
     cursorlineopt = "number";
     signcolumn = "yes:1";
@@ -25,6 +26,7 @@
     swapfile = false;
     history = 10000;
     undofile = true;
+    undodir.__raw = "vim.fs.normalize('~/.vim/undodir')";
   };
 
   globals = {
