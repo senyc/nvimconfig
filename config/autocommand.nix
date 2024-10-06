@@ -8,10 +8,10 @@
     }
     {
       # Make sure we override comments otherwise be default they'll only be formatted like comments
-      command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2'';
+      command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2 | setl wrap'';
       event = "FileType";
       pattern = "markdown";
-      desc = "Sets markdown lists and tasks to contine on enter";
+      desc = "Sets markdown lists and tasks to contine on enter, also sets wrap and conceals markdown characters";
     }
     {
       command = ''setl tabstop=4 | setl shiftwidth=4 | setl softtabstop=4'';
