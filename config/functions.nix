@@ -50,5 +50,15 @@
         end
       end)
     end
+
+    function CreateNote(directory)
+      vim.ui.input({ prompt = 'Create note in ' .. directory .. ':', default=directory }, function(input)
+        -- Test for <C-c>
+        if input == nil or input:find "\3" or input:find "\x03" then
+          return
+        end
+          vim.cmd('edit ' ..  input)
+      end)
+    end
   '';
 }

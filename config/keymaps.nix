@@ -45,6 +45,16 @@ in {
       desc = "Remove current buffer and associated file";
     }
     {
+      action = ":lua CreateNote('~/projects/notes/')<cr>";
+      key = "<leader>ncp";
+      desc = "Create new note in project notes (all user to enter file name";
+    }
+    {
+      action = ":lua CreateNote('~/work/notes/')<cr>";
+      key = "<leader>ncw";
+      desc = "Create new note in work notes (all user to enter file name";
+    }
+    {
       action = "<cmd>Ex<cr>";
       key = "<leader>fe";
       desc = "Starts file explorer (netrw)";
