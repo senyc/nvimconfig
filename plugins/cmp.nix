@@ -36,14 +36,4 @@
       };
     };
   };
-  extraConfigLua = ''
-    local cmp = require'cmp'
-
-      cmp.setup.cmdline({'/', "?" }, {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' }
-        }
-      })
-  '';
 }

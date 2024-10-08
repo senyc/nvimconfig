@@ -21,8 +21,6 @@
     incsearch = true;
     scrolloff = 10;
 
-    completeopt = ["menuone" "noselect" "noinsert"];
-
     swapfile = false;
     history = 10000;
     undofile = true;
