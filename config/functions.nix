@@ -60,5 +60,16 @@
           vim.cmd('edit ' ..  input)
       end)
     end
+
+    function AppendTodo(directory)
+      vim.ui.input({ prompt = 'New todo: ', }, function(input)
+        -- Test for <C-c>
+        if input == nil or input:find "\3" or input:find "\x03" then
+          return
+        end
+          -- Append new todo to notes
+          vim.cmd('silent !echo "- [ ] ' .. input .. '" >> ~/projects/notes/todos.md')
+      end)
+    end
   '';
 }

@@ -59,5 +59,10 @@ in {
       key = "<leader>fe";
       desc = "Starts file explorer (netrw)";
     }
+    {
+      action = ":lua AppendTodo()<cr>";
+      key = "<leader>tc";
+      desc = "Todo create";
+    }
   ];
 }
