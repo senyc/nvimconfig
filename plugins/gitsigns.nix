@@ -21,7 +21,7 @@ in {
       };
       attach_to_untracked = true;
       current_line_blame = true;
-      current_line_blame_formatter = ''<author> • <author_time:%m/%d/%Y> • <summary>'';
+      current_line_blame_formatter = ''(<abbrev_sha>) <author> • <author_time:%m/%d/%Y> • <summary>'';
       current_line_blame_opts = {
         virt_text = true;
         virt_text_pos = "eol";
