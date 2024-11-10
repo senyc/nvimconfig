@@ -15,7 +15,7 @@
         lualine_b = ["branch"];
         lualine_c = [
           {
-            name = "filename";
+            __unkeyed = "filename";
             padding = {
               right = 0;
               left = 1;
