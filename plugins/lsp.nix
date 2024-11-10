@@ -33,7 +33,7 @@
       cssls.enable = true;
       gopls.enable = true;
       solargraph.enable = true;
-      lua-ls = {
+      lua_ls = {
         enable = true;
         extraOptions = {
           settings = {
@@ -57,7 +57,7 @@
           };
         };
       };
-      nil-ls = {
+      nil_ls = {
         enable = true;
         extraOptions = {
           settings = {
@@ -77,8 +77,8 @@
       };
       pyright.enable = true;
       tailwindcss.enable = true;
-      ts-ls.enable = true;
-      helm-ls = {
+      ts_ls.enable = true;
+      helm_ls = {
         enable = true;
         settings = {
           yamlls = {
