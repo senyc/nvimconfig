@@ -14,10 +14,16 @@
           '';
         };
         sources = [
-          {name = "nvim_lsp";}
+          {
+            name = "nvim_lsp";
+            priority = 100;
+          }
+          {
+            name = "luasnip";
+            priority = 101;
+          }
           {name = "nvim_lua";}
           {name = "path";}
-          {name = "luasnip";}
           {name = "buffer";}
         ];
         window = {
@@ -30,7 +36,6 @@
           };
         };
         performance = {
-          debounce = 60;
           max_view_entries = 30;
         };
       };

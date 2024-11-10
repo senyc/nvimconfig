@@ -60,7 +60,7 @@ in {
       desc = "Starts file explorer (netrw)";
     }
     {
-      action = ":lua AppendNote()<cr>";
+      action = ":lua AppendTodo()<cr>";
       key = "<leader>tc";
       desc = "Todo create";
     }
