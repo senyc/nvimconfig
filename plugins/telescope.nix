@@ -53,7 +53,6 @@ in
         key = "<c-f>";
         action = ":lua require('telescope.builtin').find_files { no_ignore = true, hidden = true, show_untracked = true }<cr>";
         desc = "Find file";
-        mode = ["n" "i"];
       }
       {
         key = "<leader>fg";
