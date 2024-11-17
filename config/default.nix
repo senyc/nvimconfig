@@ -9,6 +9,7 @@
     ./functions.nix
 
     ../plugins/lsp.nix
+    ../plugins/unimpaired.nix
     ../plugins/undotree.nix
     ../plugins/toggleterm.nix
     ../plugins/grapple.nix
