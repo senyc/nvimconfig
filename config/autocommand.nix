@@ -13,13 +13,6 @@
       desc = "Do not indent line on ':', behaviour meant to help out with c programming, but useless in many modern languages";
     }
     {
-      # e flag will disable error messages if no match found
-      command = ''%s/\s\+$//e'';
-      event = "BufWritePre";
-      pattern = "*";
-      desc = "Remove trailing white spaces before saving buffer to disc";
-    }
-    {
       command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2 | setl wrap'';
       event = "FileType";
       pattern = "markdown";
@@ -34,6 +27,7 @@
         "toml"
         "gitconfig"
         "go"
+        "sql"
         "bash"
       ];
       desc = "Sets identation to 4 spaces";

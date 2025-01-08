@@ -7,7 +7,7 @@ in {
       src = pkgs.fetchFromGitHub {
         owner = "ldelossa";
         repo = "litee.nvim";
-        rev = "main";
+        rev = "4efaf373322d9e71eaff31164abb393417cc6f6a";
         hash = "sha256-PUFPQA0LWXn2fjT8Cfy7SFX14hkbUH05mQF4enuxUo0=";
       };
     })
@@ -15,10 +15,10 @@ in {
     (pkgs.vimUtils.buildVimPlugin {
       name = "gh.nvim";
       src = pkgs.fetchFromGitHub {
-        owner = "senyc";
+        owner = "ldelossa";
         repo = "gh.nvim";
         rev = "main";
-        hash = "sha256-DwxvJ7IW/qNHWmgNEihnKvCeKzhgNfw7SkQfxeOQMWg=";
+        hash = "sha256-5MWv/TpJSJfPY3y2dC1f2T/9sP4wn0kZ0Sed5OOFM5c=";
       };
     })
   ];

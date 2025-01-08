@@ -64,5 +64,10 @@ in {
       key = "<leader>tc";
       desc = "Todo create";
     }
+    {
+      action = '':set nohlsearch | %s/\s\+$//e<cr>'';
+      key = "<leader>wc";
+      desc = "Whitespace clear";
+    }
   ];
 }
