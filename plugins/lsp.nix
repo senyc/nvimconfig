@@ -94,6 +94,7 @@
   extraPackages = with pkgs; [
     alejandra
     nodePackages.prettier
+    black
   ];
 
   extraConfigLua = ''
