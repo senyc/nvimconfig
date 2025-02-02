@@ -27,6 +27,7 @@
     };
 
     servers = {
+      volar.enable = true;
       terraformls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
