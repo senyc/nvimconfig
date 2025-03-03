@@ -4,7 +4,7 @@ in {
   plugins = {
     oil.enable = true;
   };
-  keymaps = utils.deafultMap [
+  keymaps = utils.defaultMap [
     {
       action = "<cmd>Oil<cr>";
       key = "<leader>fe";
