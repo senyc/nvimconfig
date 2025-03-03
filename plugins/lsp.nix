@@ -27,6 +27,7 @@
     };
 
     servers = {
+      emmet_language_server.enable = true;
       volar.enable = true;
       terraformls.enable = true;
       bashls.enable = true;
