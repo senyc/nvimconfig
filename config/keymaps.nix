@@ -55,11 +55,6 @@ in {
       desc = "Create new note in work notes (all user to enter file name";
     }
     {
-      action = "<cmd>Ex<cr>";
-      key = "<leader>fe";
-      desc = "Starts file explorer (netrw)";
-    }
-    {
       action = ":lua AppendTodo()<cr>";
       key = "<leader>tc";
       desc = "Todo create";

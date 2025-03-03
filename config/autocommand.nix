@@ -39,6 +39,12 @@
       desc = "Tabs will not be converted to spaces";
     }
     {
+      command = ''setl bufhidden=delete'';
+      event = "FileType";
+      pattern = "netrw";
+      desc = "fix netrw tab issue?";
+    }
+    {
       callback.__raw = ''
         function()
           vim.keymap.set('n', '<leader>sf', ':w<cr>:silent !prettier --write %<cr>', {buffer = true, silent = true})

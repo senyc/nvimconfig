@@ -21,6 +21,7 @@
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
     ../plugins/nvim-surround.nix
+    ../plugins/oil.nix
     # ../plugins/gh-nvim.nix
   ];
 }
