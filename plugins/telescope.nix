@@ -23,6 +23,7 @@ in
             "node_modules/"
             "dist/"
             ".next/"
+            "package%-lock.json"
           ];
           vimgrep_arguments = [
             "rg"
