@@ -23,5 +23,6 @@
     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
     # ../plugins/gh-nvim.nix
+    ../plugins/direnv.nix
   ];
 }
