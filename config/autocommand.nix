@@ -56,6 +56,7 @@
         "typescriptreact"
         "javascript"
         "javascriptreact"
+        "vue"
       ];
       desc = "Will overwrite default tsserver format behavior";
     }
