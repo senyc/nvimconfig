@@ -24,5 +24,6 @@
     ../plugins/oil.nix
     # ../plugins/gh-nvim.nix
     ../plugins/direnv.nix
+    ../plugins/codecompanion.nix
   ];
 }
