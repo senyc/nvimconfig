@@ -2,7 +2,6 @@ let
   utils = import ../utils.nix;
 in
   {pkgs, ...}: {
-    plugins.web-devicons.enable = true;
     plugins.telescope = {
       enable = true;
       extensions = {
@@ -12,17 +11,12 @@ in
       };
       settings = {
         defaults = {
-          layout_config = {
-            horizontal = {
-              prompt_position = "top";
-            };
-          };
-          sorting_strategy = "ascending";
           file_ignore_patterns = [
             "^.git/"
             "node_modules/"
             "dist/"
             ".next/"
+            ".direnv/"
             "package%-lock.json"
           ];
           vimgrep_arguments = [
@@ -52,13 +46,13 @@ in
     keymaps = utils.defaultMap [
       {
         key = "<c-f>";
-        action = ":lua require('telescope.builtin').find_files { no_ignore = true, hidden = true, show_untracked = true }<cr>";
+        action = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ no_ignore = true, hidden = true, show_untracked = true }))<cr>";
         desc = "Find file";
       }
       {
-        key = "<leader>fg";
-        action = ":lua require('telescope.builtin').live_grep {hidden = true }<cr>";
-        desc = "Find grep";
+        key = "<leader>fh";
+        action = ":lua require('telescope.builtin').help_tags() <cr>";
+        desc = "Find help";
       }
       {
         key = "<leader>fr";
@@ -74,17 +68,19 @@ in
 
     # Add telescope optional dependencies
     extraPackages = with pkgs; [
+      fzf
       ripgrep
       fd
     ];
 
     extraConfigLua = ''
       local directory_picker = function(name, cmd)
-        require("telescope.pickers").new({}, {
+        require("telescope.pickers").new({}, require('telescope.themes').get_ivy({
           prompt_title = name,
           finder = require("telescope.finders").new_table({
             results = require("telescope.utils").get_os_command_output(cmd),
           }),
+          theme = require('telescope.themes').get_ivy(),
           previewer = require("telescope.previewers").vim_buffer_cat.new({}),
           sorter = require("telescope.sorters").get_fzy_sorter(),
           attach_mappings = function(prompt_bufnr)
@@ -96,8 +92,74 @@ in
             end)
             return true
           end,
-        }):find()
+        })):find()
       end
+
+      local conf = require("telescope.config").values
+      local finders = require "telescope.finders"
+      local make_entry = require "telescope.make_entry"
+      local pickers = require "telescope.pickers"
+
+      local flatten = vim.tbl_flatten
+
+      -- Totally stolen from tj devries
+      local multi_grep = function(opts)
+        opts = opts or {}
+        opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
+        opts.shortcuts = opts.shortcuts
+          or {
+            ["l"] = "*.lua",
+            ["g"] = "*.go",
+          }
+        opts.pattern = opts.pattern or "%s"
+
+        local custom_grep = finders.new_async_job {
+          command_generator = function(prompt)
+            if not prompt or prompt == "" then
+              return nil
+            end
+
+            local prompt_split = vim.split(prompt, "  ")
+
+            local args = { "rg" }
+            if prompt_split[1] then
+              table.insert(args, "-e")
+              table.insert(args, prompt_split[1])
+            end
+
+            if prompt_split[2] then
+              table.insert(args, "-g")
+
+              local pattern
+              if opts.shortcuts[prompt_split[2]] then
+                pattern = opts.shortcuts[prompt_split[2]]
+              else
+                pattern = prompt_split[2]
+              end
+
+              table.insert(args, string.format(opts.pattern, pattern))
+            end
+
+            return flatten {
+              args,
+              { "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
+            }
+          end,
+          entry_maker = make_entry.gen_from_vimgrep(opts),
+          cwd = opts.cwd,
+        }
+
+        return pickers
+          .new(opts, require('telescope.themes').get_ivy({
+            debounce = 100,
+            prompt_title = "Live Grep (with shortcuts)",
+            finder = custom_grep,
+            previewer = conf.grep_previewer(opts),
+            sorter = require("telescope.sorters").empty(),
+          })):find()
+      end
+
+      vim.keymap.set("n", "<leader>fg", multi_grep)
 
       vim.keymap.set("n", "<leader>fp", function()
         local command = ""

@@ -1,6 +1,8 @@
 {
   plugins = {
     cmp-cmdline.enable = true;
+    lspkind.enable = true;
+    luasnip.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
@@ -8,19 +10,19 @@
         mapping = {
           __raw = ''
             cmp.mapping.preset.insert({
-              ['<tab>'] = cmp.mapping.confirm({select = true}),
-              ['<CR>'] = cmp.mapping.confirm({ select = false }),
+              ['<tab>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }),
+              ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Insert }),
             })
           '';
         };
         sources = [
           {
             name = "nvim_lsp";
-            priority = 100;
+            priority = 101;
           }
           {
             name = "luasnip";
-            priority = 101;
+            priority = 100;
           }
           {name = "nvim_lua";}
           {name = "path";}
@@ -41,4 +43,14 @@
       };
     };
   };
+  extraConfigLua = ''
+    cmp.setup({
+       snippet = {
+         expand = function(args)
+           require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+
+         end
+      }
+    })
+  '';
 }

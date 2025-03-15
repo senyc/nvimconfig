@@ -20,6 +20,8 @@
     smartcase = true;
     incsearch = true;
     scrolloff = 10;
+    inccommand = "split";
+    splitright = true;
 
     swapfile = false;
     history = 10000;
@@ -27,7 +29,4 @@
     undodir.__raw = "vim.fs.normalize('~/.vim/undodir')";
   };
 
-  globals = {
-    netrw_bufsettings = "nu ro";
-  };
 }
