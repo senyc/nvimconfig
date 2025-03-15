@@ -37,9 +37,6 @@
             border = "rounded";
           };
         };
-        performance = {
-          max_view_entries = 30;
-        };
       };
     };
   };
