@@ -13,6 +13,7 @@
     ../plugins/lsp.nix
     ../plugins/undotree.nix
     ../plugins/toggleterm.nix
+    ../plugins/zen.nix
     ../plugins/grapple.nix
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
