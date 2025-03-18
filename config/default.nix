@@ -1,6 +1,7 @@
 {
   vimAlias = true;
   viAlias = true;
+
   imports = [
     ./set.nix
     ./keymaps.nix
@@ -22,6 +23,7 @@
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
+    ../plugins/colorscheme.nix
     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
     ../plugins/mini.nix

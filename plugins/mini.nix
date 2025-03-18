@@ -5,6 +5,7 @@
       ai = {};
       icons = {};
       trailspace = {};
+      splitjoin = {};
     };
     enable = true;
   };

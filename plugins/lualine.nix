@@ -3,7 +3,6 @@
     enable = true;
     settings = {
       options = {
-        theme = "moonfly";
         iconsEnabled = false;
         component_separators = {
           left = "";
