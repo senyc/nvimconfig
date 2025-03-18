@@ -27,8 +27,8 @@
     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
     ../plugins/mini.nix
-    # ../plugins/gh-nvim.nix
     ../plugins/direnv.nix
     ../plugins/codecompanion.nix
+    ../plugins/project-todo.nix
   ];
 }
