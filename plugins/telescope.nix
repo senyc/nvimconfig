@@ -61,7 +61,7 @@ in
       }
       {
         key = "<leader>fw";
-        action = ":lua require('telescope.builtin').grep_string {hidden = true }<cr>";
+        action = ":lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({hidden = true }))<cr>";
         desc = "Find word";
       }
     ];
@@ -80,7 +80,6 @@ in
           finder = require("telescope.finders").new_table({
             results = require("telescope.utils").get_os_command_output(cmd),
           }),
-          theme = require('telescope.themes').get_ivy(),
           previewer = require("telescope.previewers").vim_buffer_cat.new({}),
           sorter = require("telescope.sorters").get_fzy_sorter(),
           attach_mappings = function(prompt_bufnr)
@@ -165,9 +164,9 @@ in
         local command = ""
         -- Environment specific environment command that won't show personal projects in project search if on work host
         if os.getenv("HIDE_PERSONAL_PROJECTS") then
-          command = {vim.o.shell, "-c", "find ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+          command = {vim.o.shell, "-c", [[find ~/work ~/work/archive -mindepth 1 -maxdepth 1 -type d -path ~/work/archive -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
         else
-          command = {vim.o.shell, "-c", "find ~/projects ~/work -mindepth 1 -maxdepth 1 -type d | sed 's|" .. vim.fn.expand("$HOME") .. "|~|'"}
+          command = {vim.o.shell, "-c", [[find ~/projects ~/projects/archive ~/work ~/work/archive -mindepth 1 -maxdepth 1 -type d \( -path ~/work/archive -o -path ~/projects/archive \) -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
         end
         directory_picker("Find Projects", command)
       end)
