@@ -17,15 +17,9 @@
         vim.cmd 'echo ""'
         -- Toggles line blame
         require 'gitsigns'.toggle_current_line_blame(false)
-        vim.diagnostic.config({
-          virtual_text = false
-        })
       end,
       on_close = function()
         require 'gitsigns'.toggle_current_line_blame(true)
-        vim.diagnostic.config({
-          virtual_text = true
-        })
       end
     })
      vim.keymap.set('n', '<leader>zm', function()

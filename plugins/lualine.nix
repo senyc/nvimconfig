@@ -4,6 +4,7 @@
     settings = {
       options = {
         iconsEnabled = false;
+        always_show_tabline = false;
         component_separators = {
           left = "";
           right = "";
@@ -27,6 +28,14 @@
         lualine_x = ["encoding"];
         lualine_y = ["progress"];
         lualine_z = ["location"];
+      };
+      tabline = {
+        lualine_a = [
+          {
+            __unkeyed = "tabs";
+            mode = 2;
+          }
+        ];
       };
     };
   };
