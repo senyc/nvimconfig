@@ -16,14 +16,8 @@
           '';
         };
         sources = [
-          {
-            name = "nvim_lsp";
-            priority = 101;
-          }
-          {
-            name = "luasnip";
-            priority = 100;
-          }
+          {name = "nvim_lsp"; priority = 100;}
+          {name = "luasnip";}
           {name = "nvim_lua";}
           {name = "path";}
           {name = "buffer";}

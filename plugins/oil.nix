@@ -4,10 +4,10 @@ in {
   plugins = {
     oil = {
       enable = true;
-      keymaps = {
-        "<leader>fe" = "actions.close";
-      };
       settings = {
+        keymaps = {
+          "<leader>fe" = "actions.close";
+        };
         view_options.show_hidden = true;
         float = {
           max_height = {
