@@ -12,7 +12,6 @@
     ./functions.nix
 
     ../plugins/lsp.nix
-    ../plugins/undotree.nix
     ../plugins/toggleterm.nix
     ../plugins/zen.nix
     ../plugins/grapple.nix
@@ -31,5 +30,6 @@
     ../plugins/codecompanion.nix
     ../plugins/trouble.nix
     ../plugins/project-todo.nix
+    ../plugins/dadbod.nix
   ];
 }

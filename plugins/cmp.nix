@@ -1,5 +1,6 @@
 {
   plugins = {
+    vim-dadbod-completion.enable = true;
     cmp-cmdline.enable = true;
     lspkind.enable = true;
     luasnip.enable = true;
@@ -16,7 +17,10 @@
           '';
         };
         sources = [
-          {name = "nvim_lsp"; priority = 100;}
+          {
+            name = "nvim_lsp";
+            priority = 100;
+          }
           {name = "luasnip";}
           {name = "nvim_lua";}
           {name = "path";}
@@ -39,8 +43,14 @@
        snippet = {
          expand = function(args)
            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-
          end
+      }
+    })
+
+    cmp.setup.filetype({ "sql" }, {
+      sources = {
+        { name = 'vim-dadbod-completion' },
+        { name = 'buffer' }
       }
     })
   '';
