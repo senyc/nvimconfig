@@ -31,5 +31,7 @@
     ../plugins/trouble.nix
     ../plugins/project-todo.nix
     ../plugins/dadbod.nix
+    ../plugins/context.nix
+    ../plugins/signature.nix
   ];
 }
