@@ -9,7 +9,7 @@ in
           owner = "senyc";
           repo = "project-todo.nvim";
           rev = "main";
-          hash = "sha256-J5gJXxZtLnwtZMNPt+kx/poI5Zy/APmpX0cgbkh+s2Y=";
+          hash = "sha256-0hNsxzR0WX3BgZzDleYxyJxYQxL4LQdKuWl8VcPkuSM=";
         };
       })
     ];
