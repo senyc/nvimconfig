@@ -93,8 +93,19 @@
   ];
 
   extraConfigLua = ''
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
-    require 'lspconfig.ui.windows'.default_options.border = 'rounded'
+    -- Override over and signature functions to include rounded borders
+    local hover = vim.lsp.buf.hover
+    vim.lsp.buf.hover = function()
+        return hover({
+            border = "rounded",
+        })
+    end
+
+    local signature_help =  vim.lsp.buf.signature_help
+    vim.lsp.buf.signature_help = function()
+        return signature_help({
+            border = "rounded",
+        })
+    end
   '';
 }
