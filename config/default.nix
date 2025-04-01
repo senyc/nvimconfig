@@ -18,6 +18,8 @@
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
     ../plugins/cmp.nix
+    # for the =p motions
+    ../plugins/unimpaired.nix
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
