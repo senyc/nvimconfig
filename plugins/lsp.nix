@@ -12,17 +12,10 @@
       lspBuf = {
         "gd" = "definition";
         "gD" = "declaration";
-        "gr" = "references";
-        "<leader>a" = "code_action";
-        # "s" signifier meaning language _server_ protocol
-        "<leader>sr" = "rename";
-        "<leader>sf" = "format";
-        "<leader>st" = "type_definition";
-        "<leader>si" = "incoming_calls";
-        "<leader>so" = "outgoing_calls";
-        "<leader>ss" = "workspace_symbol";
-        "<leader>sI" = "implementation";
-        "<leader>sT" = "typehierarchy";
+        # gr - get reference
+        "grf" = "format";
+        "grt" = "type_definition";
+        "grI" = "incoming_calls";
       };
     };
 

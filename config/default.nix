@@ -18,7 +18,6 @@
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
     ../plugins/cmp.nix
-    ../plugins/unimpaired.nix
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
@@ -32,6 +31,5 @@
     ../plugins/project-todo.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
-    ../plugins/signature.nix
   ];
 }
