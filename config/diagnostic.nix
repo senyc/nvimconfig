@@ -1,11 +1,8 @@
 {
   diagnostics = {
     virtual_lines = true;
-    virtual_text = {
-      spacing = 2;
-    };
     signs = true;
-    update_in_insert = true;
+    update_in_insert = false;
     underline = false;
     severity_sort = true;
     float = {

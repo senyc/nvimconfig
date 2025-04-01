@@ -2,7 +2,8 @@
   plugins.mini = {
     mockDevIcons = true;
     modules = {
-      ai = {};
+      # Search algorithms are horrible w/ mini
+      # ai = {search_method = "cover_or_prev";};
       icons = {};
       trailspace = {};
       splitjoin = {};

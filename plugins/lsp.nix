@@ -103,16 +103,15 @@
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
     vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
     require 'lspconfig.ui.windows'.default_options.border = 'rounded'
-
-    for type, icon in pairs({
-      Error = '>>',
-      Warn = '->',
-      Hint = '>-',
-      Info = '--'
-    }) do
-      local name = 'DiagnosticSign' .. type
-      local mapping = { text = icon, texthl = name, numhl = "" }
-      vim.fn.sign_define(name, mapping)
-    end
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = ">>",
+          [vim.diagnostic.severity.WARN] = "->",
+          [vim.diagnostic.severity.INFO] = ">-",
+          [vim.diagnostic.severity.HINT] = "--",
+        },
+      }
+    })
   '';
 }

@@ -7,7 +7,6 @@
     ];
     filetypesDenylist = [
       "Outline"
-      "netrw"
       "TelescopePrompt"
     ];
     underCursor = true;
