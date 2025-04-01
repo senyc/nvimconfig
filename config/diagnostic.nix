@@ -1,9 +1,16 @@
 {
   diagnostics = {
     virtual_lines = true;
-    signs = true;
-    update_in_insert = false;
-    underline = false;
+    signs = {
+      # Goes: error, warn, hint, info
+      text = [
+        ">>"
+        "->"
+        ">-"
+        "--"
+      ];
+    };
+    underline = true;
     severity_sort = true;
     float = {
       focusable = true;
