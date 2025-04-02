@@ -57,8 +57,9 @@
         "javascript"
         "javascriptreact"
         "vue"
+        "json"
       ];
-      desc = "Will overwrite default tsserver format behavior";
+      desc = "Will add super format";
     }
   ];
 }

@@ -5,6 +5,7 @@
       options = {
         iconsEnabled = false;
         always_show_tabline = false;
+        globalstatus = true;
         component_separators = {
           left = "";
           right = "";
@@ -12,7 +13,19 @@
       };
       sections = {
         lualine_a = [''GitProjectdir()''];
-        lualine_b = ["branch"];
+        lualine_b = [
+          "branch"
+          "diff"
+          {
+            __unkeyed = "diagnostics";
+            symbols = {
+              error = "E";
+              warn = "W";
+              info = "I";
+              hint = "H";
+            };
+          }
+        ];
         lualine_c = [
           {
             __unkeyed = "filename";
@@ -34,6 +47,8 @@
           {
             __unkeyed = "tabs";
             mode = 2;
+            tab_max_length = 50;
+            path = 1;
           }
         ];
       };
