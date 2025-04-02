@@ -59,7 +59,19 @@
         "vue"
         "json"
       ];
-      desc = "Will add super format";
+      desc = "Adds prettier formatter keybind for supported filetypes";
+    }
+    {
+      callback.__raw = ''
+        function()
+          vim.keymap.set('n', '<leader>sf', ':w<cr>:silent !black "%"<cr>', {buffer = true, silent = true})
+        end
+      '';
+      event = "FileType";
+      pattern = [
+        "python"
+      ];
+      desc = "Adds black formatter keybind for python files";
     }
   ];
 }
