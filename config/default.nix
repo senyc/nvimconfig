@@ -29,7 +29,6 @@
     ../plugins/mini.nix
     ../plugins/direnv.nix
     ../plugins/codecompanion.nix
-    ../plugins/trouble.nix
     ../plugins/project-todo.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
