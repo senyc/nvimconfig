@@ -47,7 +47,8 @@
           {
             __unkeyed = "tabs";
             mode = 2;
-            tab_max_length = 50;
+            tab_max_length = 40;
+            max_length = { __raw = "vim.o.columns";};
             path = 1;
           }
         ];
