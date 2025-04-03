@@ -1,4 +1,6 @@
-{
+let
+  utils = import ../utils.nix;
+in {
   plugins.codecompanion = {
     enable = true;
     settings = {
@@ -12,7 +14,7 @@
                   },
                   schema = {
                       model = {
-                          default = 'deepseek-r1:14b',
+                          default = 'deepseek-r1:7b',
                       },
                       num_ctx = {
                           default = 32768,
@@ -42,4 +44,11 @@
       };
     };
   };
+  keymaps = utils.defaultMap [
+    {
+      action = "<cmd>CodeCompanionChat Toggle<cr>";
+      key = "<leader>ch";
+      desc = "chat open";
+    }
+  ];
 }
