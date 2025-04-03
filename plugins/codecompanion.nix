@@ -14,7 +14,7 @@ in {
                   },
                   schema = {
                       model = {
-                          default = 'deepseek-r1:7b',
+                          default = "gemma3:12b",
                       },
                       num_ctx = {
                           default = 32768,
