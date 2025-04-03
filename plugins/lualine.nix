@@ -46,10 +46,9 @@
         lualine_a = [
           {
             __unkeyed = "tabs";
-            mode = 2;
-            tab_max_length = 40;
-            max_length = { __raw = "vim.o.columns";};
-            path = 1;
+            mode = 1;
+            tab_max_length = 60;
+            max_length = { __raw = /*lua*/"function() return vim.o.columns end";};
           }
         ];
       };

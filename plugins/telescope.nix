@@ -51,8 +51,13 @@ in
       }
       {
         key = "<leader>fh";
-        action = ":lua require('telescope.builtin').help_tags() <cr>";
+        action = ":lua require('telescope.builtin').help_tags()<cr>";
         desc = "Find help";
+      }
+      {
+        key = "<leader>fk";
+        action = ":lua require('telescope.builtin').keymaps()<cr>";
+        desc = "Find keymaps";
       }
       {
         key = "<leader>fr";
