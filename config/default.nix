@@ -10,6 +10,7 @@
 
     ./autocommand.nix
     ./functions.nix
+    ../plugins/colorscheme.nix
 
     ../plugins/lsp.nix
     ../plugins/toggleterm.nix
@@ -23,7 +24,6 @@
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
-    ../plugins/colorscheme.nix
     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
     ../plugins/mini.nix
@@ -32,5 +32,6 @@
     ../plugins/project-todo.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
+    ../plugins/conflict.nix
   ];
 }
