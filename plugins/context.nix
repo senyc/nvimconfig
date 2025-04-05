@@ -4,7 +4,7 @@
       line_numbers = true;
       max_lines = 4;
       min_window_height = 25;
-      mode = "topline";
+      mode = "cursor";
       trim_scope = "inner";
       multiline_threshold = 1;
     };
