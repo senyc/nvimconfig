@@ -46,7 +46,7 @@ in
     keymaps = utils.defaultMap [
       {
         key = "<c-f>";
-        action = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ no_ignore = true, hidden = true, show_untracked = true }))<cr>";
+        action = ":lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, show_untracked = true })<cr>";
         desc = "Find file";
       }
       {
@@ -66,7 +66,7 @@ in
       }
       {
         key = "<leader>fw";
-        action = ":lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({hidden = true }))<cr>";
+        action = ":lua require('telescope.builtin').grep_string({hidden = true })<cr>";
         desc = "Find word";
       }
     ];
@@ -80,7 +80,7 @@ in
 
     extraConfigLua = ''
       local directory_picker = function(name, cmd)
-        require("telescope.pickers").new({}, require('telescope.themes').get_ivy({
+        require("telescope.pickers").new({}, {
           prompt_title = name,
           finder = require("telescope.finders").new_table({
             results = require("telescope.utils").get_os_command_output(cmd),
@@ -96,7 +96,7 @@ in
             end)
             return true
           end,
-        })):find()
+        }):find()
       end
 
       local conf = require("telescope.config").values
@@ -154,13 +154,13 @@ in
         }
 
         return pickers
-          .new(opts, require('telescope.themes').get_ivy({
+          .new(opts, {
             debounce = 100,
             prompt_title = "Live Grep (with shortcuts)",
             finder = custom_grep,
             previewer = conf.grep_previewer(opts),
             sorter = require("telescope.sorters").empty(),
-          })):find()
+          }):find()
       end
 
       vim.keymap.set("n", "<leader>fg", multi_grep)
