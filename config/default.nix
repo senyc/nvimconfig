@@ -28,7 +28,7 @@
     ../plugins/oil.nix
     ../plugins/mini.nix
     ../plugins/direnv.nix
-    ../plugins/codecompanion.nix
+    ../plugins/avante.nix
     ../plugins/project-todo.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
