@@ -22,7 +22,7 @@ in {
   };
   keymaps = utils.defaultMap [
     {
-      action = "<cmd>Oil<cr>";
+      action = ":lua require('oil').open_float()<cr>";
       key = "<a-f>";
       desc = "Toggles file explorer (oil)";
     }
