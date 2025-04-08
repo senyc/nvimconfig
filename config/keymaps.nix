@@ -35,16 +35,6 @@ in {
       desc = "quickfix open";
     }
     {
-      action = ":lua RenameCurrentFile()<cr>";
-      key = "<leader>rn";
-      desc = "rename current file";
-    }
-    {
-      action = ":lua DeleteCurrentFile()<cr>";
-      key = "<leader>rd";
-      desc = "Remove current buffer and associated file";
-    }
-    {
       action = ":lua CreateNote('~/projects/notes/')<cr>";
       key = "<leader>ncp";
       desc = "Create new note in project notes (all user to enter file name";

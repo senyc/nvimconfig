@@ -6,7 +6,7 @@ in {
       enable = true;
       settings = {
         keymaps = {
-          "<a-f>" = "actions.close";
+          "<a-e>" = "actions.close";
         };
         view_options.show_hidden = true;
         float = {
@@ -22,8 +22,8 @@ in {
   };
   keymaps = utils.defaultMap [
     {
-      action = ":lua require('oil').open_float()<cr>";
-      key = "<a-f>";
+      action = "<cmd>Oil<cr>";
+      key = "<a-e>";
       desc = "Toggles file explorer (oil)";
     }
   ];
