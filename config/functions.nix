@@ -38,7 +38,7 @@
           return
         end
           -- Append new todo to notes
-          vim.cmd('silent !echo "- [ ] ' .. input .. '" >> ~/projects/notes/todos.md')
+          vim.cmd('silent !echo "- [ ] ' .. input .. '" >> ~/p/notes/todos.md')
       end)
     end
   '';

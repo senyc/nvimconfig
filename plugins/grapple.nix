@@ -20,10 +20,9 @@ in
     extraConfigLua = ''
       require 'grapple'.setup {
         -- Grappled files, do not persist between git branches
-        scope = 'git_branch',
-          statusline = {
-            icon = "",
-          }
+        statusline = {
+          icon = "",
+        }
       }
     '';
     keymaps =

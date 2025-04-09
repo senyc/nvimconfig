@@ -33,7 +33,7 @@
               right = 0;
               left = 1;
             };
-            path = 4;
+            path = 3;
           }
           ''require('grapple').name_or_index()''
         ];

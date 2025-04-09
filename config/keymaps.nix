@@ -35,21 +35,6 @@ in {
       desc = "quickfix open";
     }
     {
-      action = ":lua CreateNote('~/projects/notes/')<cr>";
-      key = "<leader>ncp";
-      desc = "Create new note in project notes (all user to enter file name";
-    }
-    {
-      action = ":lua CreateNote('~/work/notes/')<cr>";
-      key = "<leader>ncw";
-      desc = "Create new note in work notes (all user to enter file name";
-    }
-    {
-      action = ":lua AppendTodo()<cr>";
-      key = "<leader>tc";
-      desc = "Todo create";
-    }
-    {
       action = '':set nohlsearch | %s/\s\+$//e<cr>'';
       key = "<leader>wc";
       desc = "Whitespace clear";

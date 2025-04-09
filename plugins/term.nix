@@ -10,6 +10,7 @@
         set.relativenumber = false
         set.scrolloff = 0
         vim.bo.filetype = "terminal"
+        vim.opt.spell = false
       end,
     })
 
@@ -22,6 +23,7 @@
       vim.api.nvim_win_set_height(0, 12)
       vim.wo.winfixheight = true
       vim.cmd.term()
+      vim.cmd.startinsert()
     end)
   '';
 }

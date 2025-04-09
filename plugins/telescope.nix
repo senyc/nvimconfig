@@ -163,15 +163,15 @@ in
           }):find()
       end
 
-      vim.keymap.set("n", "<leader>fg", multi_grep)
+      vim.keymap.set("n", "<leader>g", multi_grep)
 
       vim.keymap.set("n", "<leader>fp", function()
         local command = ""
         -- Environment specific environment command that won't show personal projects in project search if on work host
         if os.getenv("HIDE_PERSONAL_PROJECTS") then
-          command = {vim.o.shell, "-c", [[find ~/work ~/work/archive -mindepth 1 -maxdepth 1 -type d -path ~/work/archive -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
+          command = {vim.o.shell, "-c", [[find ~/w ~/w/archive -mindepth 1 -maxdepth 1 -type d -path ~/w/archive -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
         else
-          command = {vim.o.shell, "-c", [[find ~/projects ~/projects/archive ~/work ~/work/archive -mindepth 1 -maxdepth 1 -type d \( -path ~/work/archive -o -path ~/projects/archive \) -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
+          command = {vim.o.shell, "-c", [[find ~/p ~/p/archive ~/w ~/w/archive -mindepth 1 -maxdepth 1 -type d \( -path ~/w/archive -o -path ~/p/archive \) -prune -o -print | sed 's|]] .. vim.fn.expand("$HOME") .. "|~|'"}
         end
         directory_picker("Find Projects", command)
       end)
