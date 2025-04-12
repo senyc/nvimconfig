@@ -80,7 +80,7 @@ in
 
     extraConfigLua = ''
       local directory_picker = function(name, cmd)
-        require("telescope.pickers").new({}, {
+        require("telescope.pickers").new({}, require('telescope.themes').get_dropdown({
           prompt_title = name,
           finder = require("telescope.finders").new_table({
             results = require("telescope.utils").get_os_command_output(cmd),
@@ -96,7 +96,7 @@ in
             end)
             return true
           end,
-        }):find()
+        })):find()
       end
 
       local conf = require("telescope.config").values
