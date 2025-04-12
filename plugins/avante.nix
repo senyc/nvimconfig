@@ -3,9 +3,9 @@
     enable = true;
     settings = {
       openai = {
-        model = "gpt-4o-mini";
+        model = "gpt-4o";
       };
-      provider = "openai";
+      provider = "openai-gpt-4o-mini";
     };
   };
 }
