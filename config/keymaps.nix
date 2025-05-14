@@ -10,9 +10,14 @@ in {
       desc = "center screen on <c-d>";
     }
     {
-      action = "<c-u>zz";
-      key = "<c-u>";
-      desc = "center screen on <c-u>";
+      action = "<c-d>zz";
+      key = "<c-d>";
+      desc = "center screen on <c-d>";
+    }
+    {
+      action = "<cmd>silent !tmux neww tmux-sessionizer<cr>";
+      key = "<c-f>";
+      desc = "run tmux tmux-sessionizer";
     }
     {
       action = ":cnext<cr>zz";

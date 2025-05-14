@@ -1,25 +1,25 @@
 {
   autoCmd = [
     {
-      command = ''setl formatoptions-=cro | setl indentkeys-=: | setl indentkeys-=<:>'';
+      command = /*vim*/''setl formatoptions-=cro | setl indentkeys-=: | setl indentkeys-=<:>'';
       event = "FileType";
       pattern = "*";
       desc = "Do not continue comments on next line in normal or insert mode";
     }
     {
-      command = ''setl indentkeys-=: | setl indentkeys-=<:>'';
+      command = /*vim*/''setl indentkeys-=: | setl indentkeys-=<:>'';
       event = "FileType";
       pattern = "*";
       desc = "Do not indent line on ':', behaviour meant to help out with c programming, but useless in many modern languages";
     }
     {
-      command = ''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2 | setl wrap'';
+      command = /*vim*/''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2 | setl wrap'';
       event = "FileType";
       pattern = "markdown";
       desc = "Sets markdown lists and tasks to contine on enter, also sets wrap and conceals markdown characters";
     }
     {
-      command = ''setl tabstop=4 | setl shiftwidth=4 | setl softtabstop=4'';
+      command = /*vim*/''setl tabstop=4 | setl shiftwidth=4 | setl softtabstop=4'';
       event = "FileType";
       pattern = [
         "markdown"
@@ -47,7 +47,8 @@
     {
       callback.__raw = ''
         function()
-          vim.keymap.set('n', '<leader>sf', ':w<cr>:silent !prettier --write "%"<cr>', {buffer = true, silent = true})
+          -- grs like grf (format) but for the secondary formatter
+          vim.keymap.set('n', 'grs', ':w<cr>:silent !prettier --write "%"<cr>', {buffer = true, silent = true})
         end
       '';
       event = "FileType";
@@ -64,7 +65,8 @@
     {
       callback.__raw = ''
         function()
-          vim.keymap.set('n', '<leader>sf', ':w<cr>:silent !black "%"<cr>', {buffer = true, silent = true})
+          -- grs like grf (format) but for the secondary formatter
+          vim.keymap.set('n', 'grs', ':w<cr>:silent !black "%"<cr>', {buffer = true, silent = true})
         end
       '';
       event = "FileType";

@@ -11,6 +11,8 @@
     ./autocommand.nix
     ./functions.nix
     ../plugins/colorscheme.nix
+    ../plugins/colorizer.nix
+    ../plugins/undotree.nix
 
     ../plugins/lsp.nix
     ../plugins/zen.nix
