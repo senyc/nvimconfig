@@ -5,14 +5,14 @@
       options = {
         iconsEnabled = false;
         always_show_tabline = false;
-        globalstatus = true;
+        globalstatus = false;
         component_separators = {
           left = "";
           right = "";
         };
       };
       sections = {
-        lualine_a = [''GitProjectdir()''];
+        lualine_a = [""];
         lualine_b = [
           "branch"
           "diff"
@@ -39,8 +39,8 @@
         ];
 
         lualine_x = ["encoding"];
-        lualine_y = ["progress"];
-        lualine_z = ["location"];
+        lualine_y = [""];
+        lualine_z = [""];
       };
       tabline = {
         lualine_a = [

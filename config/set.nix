@@ -27,7 +27,6 @@
     history = 10000;
     undofile = true;
     undodir.__raw = "vim.fs.normalize('~/.vim/undodir')";
-    laststatus = 3;
   };
 
 }
