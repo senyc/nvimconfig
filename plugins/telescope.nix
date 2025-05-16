@@ -34,7 +34,7 @@ in
             i = {
               "<esc>".__raw = "require('telescope.actions').close";
               # To quickly toggle telescope for file search if applicable
-              "<c-f>".__raw = "require('telescope.actions').close";
+              "<m-s>".__raw = "require('telescope.actions').close";
             };
             n = {
               "<esc>".__raw = "require('telescope.actions').close";

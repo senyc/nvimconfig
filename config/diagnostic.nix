@@ -1,5 +1,5 @@
 {
-  diagnostics = {
+  diagnostic.settings = {
     virtual_text = true;
     virtual_lines = false;
     signs = {
