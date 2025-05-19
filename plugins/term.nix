@@ -26,12 +26,12 @@
       vim.cmd.startinsert()
     end)
 
-    -- Open a terminal in a new tab.
-    vim.keymap.set("n", "<m-n>", function()
-      vim.cmd.new()
-      vim.cmd.wincmd "T"
-      vim.cmd.term()
-      vim.cmd.startinsert()
-    end)
+    -- -- Open a terminal in a new tab.
+    -- vim.keymap.set("n", "<m-n>", function()
+    --   vim.cmd.new()
+    --   vim.cmd.wincmd "T"
+    --   vim.cmd.term()
+    --   vim.cmd.startinsert()
+    -- end)
   '';
 }

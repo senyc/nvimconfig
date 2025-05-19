@@ -1,5 +1,7 @@
 {
-  plugins.zen-mode.enable = true;
+  plugins.zen-mode = {
+    enable = true;
+  };
   # plugins.twilight.enable = true;
   extraConfigLua = ''
     require('zen-mode').setup({
@@ -8,6 +10,7 @@
       },
       plugins = {
         gitsigns = {enabled = true},
+        twilight = {enabled = false},
         alacritty = {
           enabled = true,
           font = 15
