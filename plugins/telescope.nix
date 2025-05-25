@@ -34,7 +34,7 @@ in
             i = {
               "<esc>".__raw = "require('telescope.actions').close";
               # To quickly toggle telescope for file search if applicable
-              "<m-s>".__raw = "require('telescope.actions').close";
+              "<m-f>".__raw = "require('telescope.actions').close";
             };
             n = {
               "<esc>".__raw = "require('telescope.actions').close";
@@ -45,7 +45,7 @@ in
     };
     keymaps = utils.defaultMap [
       {
-        key = "<m-s>";
+        key = "<m-f>";
         action = ":lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, show_untracked = true })<cr>";
         desc = "Find file";
       }

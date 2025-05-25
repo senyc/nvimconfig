@@ -16,7 +16,7 @@
 
     ../plugins/lsp.nix
     ../plugins/zen.nix
-    ../plugins/term.nix
+    # ../plugins/term.nix
     ../plugins/grapple.nix
     ../plugins/illuminate.nix
     ../plugins/lualine.nix

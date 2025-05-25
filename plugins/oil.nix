@@ -7,7 +7,7 @@ in {
       settings = {
         skip_confirm_for_simple_edits = true;
         keymaps = {
-          "<a-f>" = "actions.close";
+          "<leader>e" = "actions.close";
         };
         view_options.show_hidden = true;
         float = {
@@ -24,7 +24,7 @@ in {
   keymaps = utils.defaultMap [
     {
       action = "<cmd>Oil<cr>";
-      key = "<a-f>";
+      key = "<leader>e";
       desc = "Toggles file explorer (oil)";
     }
   ];
