@@ -9,7 +9,6 @@
     ./diagnostic.nix
 
     ./autocommand.nix
-    ./functions.nix
     ../plugins/colorscheme.nix
     ../plugins/colorizer.nix
     ../plugins/undotree.nix

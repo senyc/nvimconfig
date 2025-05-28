@@ -20,7 +20,7 @@ in
     extraConfigLua = ''
       require 'grapple'.setup {
         -- Grappled files, do not persist between git branches
-       scope = 'git_branch',
+       scope = 'git',
         statusline = {
           icon = "",
         }
@@ -29,21 +29,52 @@ in
     keymaps =
       utils.defaultMap [
         {
-          key = "<c-e>";
+          key = "<leader>h";
           action = "<cmd>Grapple toggle<cr>";
           desc = "toggle grapple for file";
+        }
+        {
+          key = "<c-e>";
+          action = "<cmd>Grapple toggle_tags<cr>";
+          desc = "toggle grapple display";
           mode = ["i" "n"];
         }
         {
           key = "<c-h>";
-          action = "<cmd>Grapple toggle_tags<cr>";
-          desc = "toggle grapple display";
+          action = "<cmd>Grapple select index=1<cr>";
+          desc = "Select index 1";
           mode = ["i" "n"];
+        }
+        {
+          key = "<c-t>";
+          action = "<cmd>Grapple select index=2<cr>";
+          desc = "Select index 2";
+          mode = ["i" "n"];
+        }
+        {
+          key = "<c-p>";
+          action = "<cmd>Grapple select index=3<cr>";
+          desc = "Select index 3";
+        }
+        {
+          key = "<c-n>";
+          action = "<cmd>Grapple select index=4<cr>";
+          desc = "Select index 4";
+        }
+        {
+          key = "<m-n>";
+          action = "<cmd>Grapple cycle_tags next<cr>";
+          desc = "toggle grapple display";
+        }
+        {
+          key = "<m-p>";
+          action = "<cmd>Grapple cycle_tags prev<cr>";
+          desc = "toggle grapple display";
         }
       ]
       ++ map (num: {
         key = "<leader>${toString num}";
         action = "<cmd>Grapple select index=${toString num}<cr>";
       })
-      (lib.range 1 9);
+      (lib.range 5 9);
   }
