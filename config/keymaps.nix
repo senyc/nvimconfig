@@ -15,11 +15,6 @@ in {
       desc = "center screen on <c-d>";
     }
     {
-      action = "<cmd>silent !tmux neww tmux-sessionizer<cr>";
-      key = "<c-f>";
-      desc = "run tmux tmux-sessionizer";
-    }
-    {
       action = ":cnext<cr>zz";
       key = "<c-j>";
       desc = "navigates to next quickfix item, centering the screen";
