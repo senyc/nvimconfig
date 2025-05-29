@@ -30,7 +30,6 @@
     ../plugins/mini.nix
     ../plugins/direnv.nix
     ../plugins/avante.nix
-    ../plugins/project-todo.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
     ../plugins/conflict.nix
