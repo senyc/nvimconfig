@@ -29,4 +29,9 @@
     undodir.__raw = "vim.fs.normalize('~/.vim/undodir')";
   };
 
+  # on :W default to :w
+  extraConfigLua = ''
+    vim.cmd("cabbrev W w")
+    vim.cmd("cabbrev Wa wa")
+  '';
 }
