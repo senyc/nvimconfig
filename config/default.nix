@@ -33,5 +33,6 @@
     ../plugins/dadbod.nix
     ../plugins/context.nix
     ../plugins/conflict.nix
+    ../plugins/project-todo.nix
   ];
 }
