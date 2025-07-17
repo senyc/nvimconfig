@@ -29,7 +29,7 @@
     ../plugins/oil.nix
     ../plugins/mini.nix
     ../plugins/direnv.nix
-    ../plugins/avante.nix
+    # ../plugins/avante.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix
     ../plugins/conflict.nix
