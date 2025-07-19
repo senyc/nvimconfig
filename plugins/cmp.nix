@@ -3,7 +3,24 @@
     vim-dadbod-completion.enable = true;
     cmp-cmdline.enable = true;
     lspkind.enable = true;
-    luasnip.enable = true;
+    noice = {
+      enable = true;
+    };
+    friendly-snippets = {
+      enable = true;
+    };
+    luasnip = {
+      enable = true;
+      settings = {
+        enable_autosnippets = true;
+      };
+      fromLua = [
+        {
+          paths = ./snippets;
+          include = ["typescriptreact"];
+        }
+      ];
+    };
     cmp = {
       enable = true;
       autoEnableSources = true;

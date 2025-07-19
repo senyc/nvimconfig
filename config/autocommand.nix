@@ -30,7 +30,7 @@
         "sql"
         "bash"
       ];
-      desc = "Sets identation to 4 spaces";
+      desc = "Sets indentation to 4 spaces";
     }
     {
       command = ''setl noexpandtab'';
