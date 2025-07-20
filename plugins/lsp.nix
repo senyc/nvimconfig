@@ -108,22 +108,5 @@
             border = "rounded",
         })
     end
-
-    -- This will automatically select the first code action if just press <Enter>
-    local orig_select = vim.ui.select
-    vim.ui.select = function(items, opts, on_choice)
-      if opts.kind == "codeaction" then
-        opts.prompt = opts.prompt or "Code actions: "
-        local orig_on_choice = on_choice
-        on_choice = function(item, idx)
-          if not item and #items > 0 then
-            item = items[1]
-            idx = 1
-          end
-          return orig_on_choice(item, idx)
-        end
-      end
-      orig_select(items, opts, on_choice)
-    end
   '';
 }
