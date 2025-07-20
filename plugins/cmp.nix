@@ -3,10 +3,6 @@
     vim-dadbod-completion.enable = true;
     cmp-cmdline.enable = true;
     lspkind.enable = true;
-    notify.enable = true;
-    noice = {
-      enable = true;
-    };
     friendly-snippets = {
       enable = true;
     };
