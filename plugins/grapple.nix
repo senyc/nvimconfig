@@ -34,13 +34,13 @@ in
           desc = "toggle grapple for file";
         }
         {
-          key = "<c-e>";
+          key = "<c-h>";
           action = "<cmd>Grapple toggle_tags<cr>";
           desc = "toggle grapple display";
           mode = ["i" "n"];
         }
         {
-          key = "<c-h>";
+          key = "<c-e>";
           action = "<cmd>Grapple select index=1<cr>";
           desc = "Select index 1";
           mode = ["i" "n"];
@@ -64,11 +64,6 @@ in
         {
           key = "<m-n>";
           action = "<cmd>Grapple cycle_tags next<cr>";
-          desc = "toggle grapple display";
-        }
-        {
-          key = "<m-p>";
-          action = "<cmd>Grapple cycle_tags prev<cr>";
           desc = "toggle grapple display";
         }
       ]

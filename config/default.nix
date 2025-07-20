@@ -9,8 +9,8 @@
     ./diagnostic.nix
 
     ./autocommand.nix
-    ../plugins/colorscheme.nix
     ../plugins/colorizer.nix
+    ../plugins/colorscheme.nix
     ../plugins/undotree.nix
 
     ../plugins/lsp.nix
@@ -20,8 +20,6 @@
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
     ../plugins/cmp.nix
-    # for the =p motions
-    ../plugins/unimpaired.nix
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
