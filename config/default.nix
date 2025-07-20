@@ -25,6 +25,7 @@
     ../plugins/gitsigns.nix
     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
+    ../plugins/neotest.nix
     ../plugins/mini.nix
     ../plugins/direnv.nix
     # ../plugins/avante.nix
