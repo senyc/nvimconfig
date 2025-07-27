@@ -14,6 +14,7 @@ in
           file_ignore_patterns = [
             "^.git/"
             "node_modules/"
+            "__pycache__/"
             "dist/"
             ".next/"
             ".direnv/"
