@@ -22,18 +22,12 @@
       settings = {
         keymap = {
           preset = "super-tab";
-          "<Tab>" = [
-            {
-              __raw = ''
-                function(cmp)
-                  -- If we are in a snippet tab should navigate through snippet cursors
-                  if cmp.snippet_active() then return cmp.snippet_forward()
-                  else return cmp.select_and_accept() end
-                end
-              '';
-            }
-
+          "<C-k>" = [
             "snippet_forward"
+            "fallback"
+          ];
+          "<C-j>" = [
+            "snippet_backward"
             "fallback"
           ];
         };
@@ -102,7 +96,7 @@
 
         completion = {
           menu = {
-            border = "none";
+            border = "rounded";
             draw = {
               gap = 1;
               treesitter = ["lsp"];
@@ -124,12 +118,12 @@
           documentation = {
             auto_show = true;
             window = {
-              border = "single";
+              border = "rounded";
             };
           };
           accept = {
             auto_brackets = {
-              enabled = true;
+              enabled = false;
             };
           };
         };
