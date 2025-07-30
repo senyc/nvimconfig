@@ -29,9 +29,9 @@ in
     keymaps =
       utils.defaultMap [
         {
-          key = "<leader>h";
+          key = "<leader>a";
           action = "<cmd>Grapple toggle<cr>";
-          desc = "toggle grapple for file";
+          desc = "Toggle adding file to grapple";
         }
         {
           key = "<c-h>";
@@ -60,11 +60,6 @@ in
           key = "<c-n>";
           action = "<cmd>Grapple select index=4<cr>";
           desc = "Select index 4";
-        }
-        {
-          key = "<m-n>";
-          action = "<cmd>Grapple cycle_tags next<cr>";
-          desc = "toggle grapple display";
         }
       ]
       ++ map (num: {

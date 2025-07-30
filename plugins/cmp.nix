@@ -52,6 +52,7 @@
           };
           documentation = {
             border = "rounded";
+
           };
         };
       };

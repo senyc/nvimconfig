@@ -34,8 +34,6 @@ in
           mappings = {
             i = {
               "<esc>".__raw = "require('telescope.actions').close";
-              # To quickly toggle telescope for file search if applicable
-              "<c-f>".__raw = "require('telescope.actions').close";
             };
             n = {
               "<esc>".__raw = "require('telescope.actions').close";
@@ -46,29 +44,29 @@ in
     };
     keymaps = utils.defaultMap [
       {
-        key = "<c-f>";
-        action = ":lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, show_untracked = true })<cr>";
+        key = "<leader>f";
+        action = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ no_ignore = true, hidden = true, show_untracked = true }))<cr>";
         desc = "Find file";
       }
       {
-        key = "<leader>fh";
+        key = "<leader>sh";
         action = ":lua require('telescope.builtin').help_tags()<cr>";
-        desc = "Find help";
+        desc = "Search help";
       }
       {
-        key = "<leader>fk";
+        key = "<leader>sk";
         action = ":lua require('telescope.builtin').keymaps()<cr>";
-        desc = "Find keymaps";
+        desc = "Search keymaps";
       }
       {
-        key = "<leader>fr";
+        key = "<leader>sr";
         action = "<cmd>Telescope resume<cr>";
-        desc = "Find resume";
+        desc = "Search resume";
       }
       {
-        key = "<leader>fw";
+        key = "<leader>sw";
         action = ":lua require('telescope.builtin').grep_string({hidden = true })<cr>";
-        desc = "Find word";
+        desc = "Search word";
       }
     ];
 
@@ -166,7 +164,7 @@ in
 
       vim.keymap.set("n", "<leader>g", multi_grep)
 
-      vim.keymap.set("n", "<leader>fp", function()
+      vim.keymap.set("n", "<leader>sp", function()
         local command = ""
         -- Environment specific environment command that won't show personal projects in project search if on work host
         if os.getenv("HIDE_PERSONAL_PROJECTS") then

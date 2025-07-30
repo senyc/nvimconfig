@@ -20,7 +20,7 @@
     };
 
     servers = {
-      emmet_language_server.enable = true;
+      emmet_ls.enable = true;
       typos_lsp.enable = true;
       volar.enable = true;
       terraformls.enable = true;

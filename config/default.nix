@@ -1,5 +1,5 @@
 {
-  vimAlias = true;
+ vimAlias = true;
   viAlias = true;
 
   imports = [
@@ -15,11 +15,11 @@
 
     ../plugins/lsp.nix
     ../plugins/zen.nix
-    # ../plugins/term.nix
     ../plugins/grapple.nix
     ../plugins/illuminate.nix
     ../plugins/lualine.nix
-    ../plugins/cmp.nix
+    # ../plugins/cmp.nix
+    ../plugins/blink.nix
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
