@@ -22,6 +22,20 @@
       settings = {
         keymap = {
           preset = "super-tab";
+          "<Tab>" = [
+            {
+              __raw = ''
+                function(cmp)
+                  -- If we are in a snippet tab should navigate through snippet cursors
+                  if cmp.snippet_active() then return cmp.snippet_forward()
+                  else return cmp.select_and_accept() end
+                end
+              '';
+            }
+
+            "snippet_forward"
+            "fallback"
+          ];
         };
         snippets = {
           preset = "luasnip";
@@ -40,7 +54,7 @@
             "dadbod"
           ];
           per_filetype = {
-            sql = ["snippets" "dadbod" "buffer"];
+            sql = ["dadbod" "snippets" "buffer"];
           };
           providers = {
             lsp.score_offset = 4;
@@ -50,6 +64,42 @@
             };
           };
         };
+
+        fuzzy = {
+          sorts = [
+            {
+              __raw = ''
+                function(a, b)
+                  -- Only compare LSP sources
+                  if a.source_name ~= 'LSP' or b.source_name ~= 'LSP' then
+                    return nil -- Let default sorting handle non-LSP sources
+                  end
+
+                  -- Get client names safely
+                  local client_a = vim.lsp.get_client_by_id(a.client_id)
+                  local client_b = vim.lsp.get_client_by_id(b.client_id)
+
+                  if not client_a or not client_b then
+                    return nil
+                  end
+
+                  local name_a = client_a.name
+                  local name_b = client_b.name
+
+                  -- De-prioritize emmet_language_server (return true if 'a' should come first)
+                  if name_a == 'emmet_language_server' and name_b ~= 'emmet_language_server' then
+                    return false
+                  elseif name_a ~= 'emmet_language_server' and name_b == 'emmet_language_server' then
+                    return true
+                  end
+                end
+              '';
+            }
+            "score"
+            "sort_text"
+          ];
+        };
+
         completion = {
           menu = {
             border = "none";
@@ -69,7 +119,7 @@
             };
           };
           trigger = {
-            show_in_snippet = false;
+            show_in_snippet = true;
           };
           documentation = {
             auto_show = true;
