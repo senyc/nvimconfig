@@ -20,7 +20,7 @@ in {
       desc = "Run tests in file";
     }
     {
-      key = "<leader>to";
+      key = "<leader>ts";
       action = "<cmd>Neotest summary<cr>";
       desc = "Open test summary";
     }
