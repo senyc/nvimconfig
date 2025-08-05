@@ -35,7 +35,7 @@
           preset = "luasnip";
         };
         signature = {
-          enabled = true;
+          enabled = false;
         };
 
         sources = {
