@@ -8,6 +8,10 @@ in {
         skip_confirm_for_simple_edits = true;
         keymaps = {
           "<leader>e" = "actions.close";
+          "<C-h>" = false;
+          "<C-l>" = false;
+          "<C-k>" = false;
+          "<C-j>" = false;
         };
         view_options.show_hidden = true;
       };

@@ -1,7 +1,6 @@
 {
   plugins = {
     vim-dadbod-completion.enable = true;
-    lspkind.enable = true;
     friendly-snippets = {
       enable = true;
     };

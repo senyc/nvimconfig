@@ -45,7 +45,7 @@ in
     keymaps = utils.defaultMap [
       {
         key = "<leader>f";
-        action = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ no_ignore = true, hidden = true, show_untracked = true }))<cr>";
+        action = ":lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, show_untracked = true })<cr>";
         desc = "Find file";
       }
       {
