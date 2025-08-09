@@ -12,8 +12,8 @@
       };
     };
   };
-  # :h treesitter-language-injections
 
+  # :h treesitter-language-injections
   extraFiles = {
     "queries/go/injections.scm".text =
       /*query*/''

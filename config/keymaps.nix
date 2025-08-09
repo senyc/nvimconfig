@@ -15,16 +15,6 @@ in {
       desc = "center screen on <c-d>";
     }
     {
-      action = ":cnext<cr>zz";
-      key = "<c-j>";
-      desc = "navigates to next quickfix item, centering the screen";
-    }
-    {
-      action = "<cmd>cprev<cr>zz";
-      key = "<c-k>";
-      desc = "navigates to previous quickfix item, centering the screen";
-    }
-    {
       action = "<cmd>cclose<cr>";
       key = "<leader>cc";
       desc = "quickfix close";
