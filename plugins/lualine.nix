@@ -35,7 +35,7 @@
             };
             path = 3;
           }
-          ''"g" .. require('grapple').name_or_index()''
+          ''require('grapple').name_or_index()''
         ];
 
         lualine_x = ["encoding"];
