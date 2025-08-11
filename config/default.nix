@@ -23,7 +23,7 @@
     ../plugins/treesitter.nix
     ../plugins/telescope.nix
     ../plugins/gitsigns.nix
-    # ../plugins/nvim-surround.nix
+     ../plugins/nvim-surround.nix
     ../plugins/oil.nix
     # broken rn
     ../plugins/neotest.nix
