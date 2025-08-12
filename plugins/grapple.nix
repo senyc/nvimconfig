@@ -28,7 +28,7 @@ in
     keymaps =
       utils.defaultMap [
         {
-          key = "<leader>a";
+          key = "<leader>h";
           action = "<cmd>Grapple toggle<cr>";
           desc = "Toggle adding file to grapple";
         }
