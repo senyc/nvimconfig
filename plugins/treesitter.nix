@@ -1,22 +1,34 @@
 {
-  plugins.treesitter = {
-    enable = true;
-    nixvimInjections = true;
-    folding = false;
-    settings = {
-      highlight = {
+  plugins = {
+    treesitter-textobjects = {
+      enable = true;
+      select = {
         enable = true;
+        lookahead = true; # Jump forward to the next text object if not directly under cursor
+        keymaps = {
+          "at" = "@tag.outer";
+          "it" = "@tag.inner";
+        };
       };
-      indent = {
-        enable = true;
+    };
+    treesitter = {
+      enable = true;
+      nixvimInjections = true;
+      folding = false;
+      settings = {
+        highlight = {
+          enable = true;
+        };
+        indent = {
+          enable = true;
+        };
       };
     };
   };
 
   # :h treesitter-language-injections
   extraFiles = {
-    "queries/go/injections.scm".text =
-      /*query*/''
+    "queries/go/injections.scm".text = /* query */''
         ; If a variable name is query assume it is sql
         (
           (short_var_declaration
@@ -49,6 +61,14 @@
           (#offset! @injection.content 0 1 0 -1)
           (#set! injection.language "sql")
         )
+      '';
+    "queries/tsx/textobjects.scm".text = /* query */''
+        (
+          jsx_element
+            (jsx_opening_element)
+            (_)* @tag.inner
+            (jsx_closing_element)
+        ) @tag.outer
       '';
   };
 }
