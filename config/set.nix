@@ -6,8 +6,9 @@
     cursorline = true;
     cursorlineopt = "number";
     signcolumn = "yes:1";
+    colorcolumn = "120";
+    termguicolors = true;
 
-    autoindent = true;
     expandtab = true;
     wrap = false;
 
@@ -17,8 +18,9 @@
     softtabstop = 2;
     shiftwidth = 2;
 
-    smartcase = true;
+    ignorecase = true;
     incsearch = true;
+
     scrolloff = 10;
     inccommand = "split";
     splitright = true;
