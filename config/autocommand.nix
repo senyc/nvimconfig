@@ -39,12 +39,6 @@
       desc = "Tabs will not be converted to spaces";
     }
     {
-      command = ''setl bufhidden=delete'';
-      event = "FileType";
-      pattern = "netrw";
-      desc = "fix netrw tab issue?";
-    }
-    {
       callback.__raw = ''
         function()
           -- grs like grf (format) but for the secondary formatter

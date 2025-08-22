@@ -5,6 +5,7 @@
       options = {
         iconsEnabled = false;
         always_show_tabline = false;
+        theme = "moonfly";
         globalstatus = false;
         component_separators = {
           left = "";

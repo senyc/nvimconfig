@@ -1,6 +1,5 @@
 {
   plugins = {
-    vim-dadbod-completion.enable = true;
     friendly-snippets = {
       enable = true;
     };

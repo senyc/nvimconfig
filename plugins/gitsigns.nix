@@ -52,5 +52,10 @@ in {
       action = "<cmd>Gitsigns prev_hunk<cr>";
       desc = "go to prev change hunk in file";
     }
+    {
+      key = "<leader>tb";
+      action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
+      desc = "Toggle line blame";
+    }
   ];
 }

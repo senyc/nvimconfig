@@ -10,7 +10,6 @@
 
     ./autocommand.nix
     ../plugins/colorizer.nix
-    ../plugins/colorscheme.nix
     ../plugins/undotree.nix
 
     ../plugins/lsp.nix
@@ -25,7 +24,6 @@
     ../plugins/gitsigns.nix
      ../plugins/nvim-surround.nix
     ../plugins/oil.nix
-    # broken rn
     ../plugins/neotest.nix
     ../plugins/mini.nix
     ../plugins/direnv.nix
