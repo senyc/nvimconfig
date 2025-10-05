@@ -1,5 +1,8 @@
 {
   plugins = {
+    treesitter-textobjects = {
+      enable = true;
+    };
     treesitter = {
       enable = true;
       nixvimInjections = true;

@@ -22,7 +22,7 @@
     servers = {
       emmet_language_server.enable = true;
       typos_lsp.enable = true;
-      volar.enable = true;
+      vue_ls.enable = true;
       terraformls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
