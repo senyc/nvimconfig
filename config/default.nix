@@ -24,6 +24,7 @@
     ../plugins/marks.nix
     ../plugins/neotest.nix
     ../plugins/mini.nix
+    ../plugins/telescope.nix
     ../plugins/direnv.nix
     ../plugins/dadbod.nix
     ../plugins/context.nix

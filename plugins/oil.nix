@@ -7,6 +7,7 @@ in {
       settings = {
         skip_confirm_for_simple_edits = true;
         lsp_file_method.autosave_changes = true;
+        lsp_file_method.enable = true;
         keymaps = {
           "<leader>e" = "actions.close";
         };

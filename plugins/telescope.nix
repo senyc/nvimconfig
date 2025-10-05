@@ -34,6 +34,41 @@ in
           mappings = {
             i = {
               "<esc>".__raw = "require('telescope.actions').close";
+              "<C-Space>".__raw = ''
+                function(prompt_bufnr)
+                  local pickers = require("telescope.pickers")
+                  local finders = require("telescope.finders")
+                  local conf = require("telescope.config").values
+                  local themes = require("telescope.themes")
+                  local actions_state = require("telescope.actions.state")
+                  local actions = require("telescope.actions")
+
+                  -- Get current picker and its results
+                  local current_picker = actions_state.get_current_picker(prompt_bufnr)
+                  local results = {}
+
+                  for entry in current_picker.manager:iter() do
+                    table.insert(results, entry)
+                  end
+
+                  actions.close(prompt_bufnr)
+
+                  -- Open new picker with same results
+                  pickers
+                    .new(themes.get_ivy({ previewer = false }), {
+                      prompt_title = "Reopened Results",
+                      finder = finders.new_table({
+                        results = results,
+                        entry_maker = function(entry)
+                          return entry
+                        end,
+                      }),
+                      sorter = conf.generic_sorter({}),
+                      previewer = false,
+                    })
+                    :find()
+                end
+              '';
             };
             n = {
               "<esc>".__raw = "require('telescope.actions').close";
@@ -45,17 +80,22 @@ in
     keymaps = utils.defaultMap [
       {
         key = "<leader>f";
-        action = ":lua require('telescope.builtin').find_files({ no_ignore = true, hidden = true, show_untracked = true })<cr>";
+        action = ":lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ no_ignore = true, hidden = true, show_untracked = true, previewer = false }))<cr>";
         desc = "Find file";
       }
       {
+        key = "<leader>/";
+        action = ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy())<cr>";
+        desc = "fuzzy find buffer";
+      }
+      {
         key = "<leader>sh";
-        action = ":lua require('telescope.builtin').help_tags()<cr>";
+        action = ":lua require('telescope.builtin').help_tags(require('telescope.themes').get_ivy({previewer = false}))<cr>";
         desc = "Search help";
       }
       {
         key = "<leader>sk";
-        action = ":lua require('telescope.builtin').keymaps()<cr>";
+        action = ":lua require('telescope.builtin').keymaps(require('telescope.themes').get_ivy({previewer = false}))<cr>";
         desc = "Search keymaps";
       }
       {
@@ -65,7 +105,7 @@ in
       }
       {
         key = "<leader>sw";
-        action = ":lua require('telescope.builtin').grep_string({hidden = true })<cr>";
+        action = ":lua require('telescope.builtin').grep_string(require('telescope.themes').get_ivy({hidden = true, previewer = false }))<cr>";
         desc = "Search word";
       }
     ];
@@ -98,22 +138,22 @@ in
         })):find()
       end
 
+      local pickers = require("telescope.pickers")
+      local finders = require("telescope.finders")
+      local make_entry = require("telescope.make_entry")
       local conf = require("telescope.config").values
-      local finders = require "telescope.finders"
-      local make_entry = require "telescope.make_entry"
-      local pickers = require "telescope.pickers"
-
+      local themes = require("telescope.themes")
       local flatten = vim.tbl_flatten
 
-      -- Totally stolen from tj devries
+      -- Totally stolen from tj devries :)
       local multi_grep = function(opts)
         opts = opts or {}
         opts.cwd = opts.cwd and vim.fn.expand(opts.cwd) or vim.loop.cwd()
-        opts.shortcuts = opts.shortcuts
-          or {
-            ["l"] = "*.lua",
-            ["g"] = "*.go",
-          }
+        opts.shortcuts = opts.shortcuts or {
+          ["l"] = "*.lua",
+          ["g"] = "*.go",
+          ["t"] = "*.ts",
+        }
         opts.pattern = opts.pattern or "%s"
 
         local custom_grep = finders.new_async_job {
@@ -123,8 +163,8 @@ in
             end
 
             local prompt_split = vim.split(prompt, "  ")
-
             local args = { "rg" }
+
             if prompt_split[1] then
               table.insert(args, "-e")
               table.insert(args, prompt_split[1])
@@ -132,14 +172,7 @@ in
 
             if prompt_split[2] then
               table.insert(args, "-g")
-
-              local pattern
-              if opts.shortcuts[prompt_split[2]] then
-                pattern = opts.shortcuts[prompt_split[2]]
-              else
-                pattern = prompt_split[2]
-              end
-
+              local pattern = opts.shortcuts[prompt_split[2]] or prompt_split[2]
               table.insert(args, string.format(opts.pattern, pattern))
             end
 
@@ -152,14 +185,15 @@ in
           cwd = opts.cwd,
         }
 
-        return pickers
-          .new(opts, {
+        pickers
+          .new(themes.get_ivy(), {
             debounce = 100,
             prompt_title = "Live Grep (with shortcuts)",
             finder = custom_grep,
-            previewer = conf.grep_previewer(opts),
+            previewer = false,
             sorter = require("telescope.sorters").empty(),
-          }):find()
+          })
+          :find()
       end
 
       vim.keymap.set("n", "<leader>g", multi_grep)
