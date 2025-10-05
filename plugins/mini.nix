@@ -1,30 +1,36 @@
-{
+let
+  utils = import ../utils.nix;
+in {
   plugins.mini = {
     mockDevIcons = true;
     modules = {
-      # nvim-surround is just better
-      # surround = {
-      #   search_method = "cover_or_next";
-      # };
-      # ai = {
-      #   search_method = "cover_or_next";
-      # };
       icons = {};
       trailspace = {};
       splitjoin = {};
+      pick = {};
     };
     enable = true;
   };
-  # keymaps = utils.defaultMap [
-  #   {
-  #     key = "cst";
-  #     action = "srtt";
-  #     desc = "change surrounding tag";
-  #   }
-  #   {
-  #     key = "csf";
-  #     action = "srff";
-  #     desc = "change surrounding function";
-  #   }
-  # ];
+  keymaps = utils.defaultMap [
+    {
+      action = "<cmd>Pick files<cr>";
+      key = "<leader>f";
+      desc = "Opens up file picker (mini)";
+    }
+    {
+      action = "<cmd>Pick grep_live<cr>";
+      key = "<leader>g";
+      desc = "Opens up live grep (mini)";
+    }
+    {
+      action = "<cmd>Pick resume<cr>";
+      key = "<leader>r";
+      desc = "Resumes mini picker";
+    }
+    {
+      action = "<cmd>Pick help<cr>";
+      key = "<leader>sh";
+      desc = "Opens up help picker (mini)";
+    }
+  ];
 }

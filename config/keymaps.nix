@@ -20,6 +20,16 @@ in {
       desc = "quickfix close";
     }
     {
+      action = "<cmd>cnext<cr>";
+      key = "<C-j>";
+      desc = "quickfix next";
+    }
+    {
+      action = "<cmd>cprev<cr>";
+      key = "<C-k>";
+      desc = "quickfix prev";
+    }
+    {
       action = "<cmd>copen<cr>";
       key = "<leader>co";
       desc = "quickfix open";

@@ -16,7 +16,7 @@
       command = /*vim*/''setl comments=b:-\ [\ ],b:-\ [x],b:-,b:* | setl formatoptions+=ro | setl conceallevel=2 | setl wrap'';
       event = "FileType";
       pattern = "markdown";
-      desc = "Sets markdown lists and tasks to contine on enter, also sets wrap and conceals markdown characters";
+      desc = "Sets markdown lists and tasks to continue on enter, also sets wrap and conceals markdown characters";
     }
     {
       command = /*vim*/''setl tabstop=4 | setl shiftwidth=4 | setl softtabstop=4'';

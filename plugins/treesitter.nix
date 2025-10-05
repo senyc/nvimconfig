@@ -1,16 +1,5 @@
 {
   plugins = {
-    treesitter-textobjects = {
-      enable = true;
-      select = {
-        enable = true;
-        lookahead = true; # Jump forward to the next text object if not directly under cursor
-        keymaps = {
-          "at" = "@tag.outer";
-          "it" = "@tag.inner";
-        };
-      };
-    };
     treesitter = {
       enable = true;
       nixvimInjections = true;
@@ -61,14 +50,6 @@
           (#offset! @injection.content 0 1 0 -1)
           (#set! injection.language "sql")
         )
-      '';
-    "queries/tsx/textobjects.scm".text = /* query */''
-        (
-          jsx_element
-            (jsx_opening_element)
-            (_)* @tag.inner
-            (jsx_closing_element)
-        ) @tag.outer
       '';
   };
 }

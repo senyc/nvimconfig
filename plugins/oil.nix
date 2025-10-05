@@ -9,7 +9,6 @@ in {
         lsp_file_method.autosave_changes = true;
         keymaps = {
           "<leader>e" = "actions.close";
-          "<C-h>" = false;
         };
         view_options.show_hidden = true;
         win_options = {
