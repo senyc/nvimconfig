@@ -39,5 +39,10 @@ in {
       key = "<leader>wc";
       desc = "Whitespace clear";
     }
+    {
+      action = ''<cmd>lua local h = io.popen('git rev-parse --show-toplevel 2>/dev/null'); local root = h:read('*l'); h:close(); if root then local bufpath = vim.fn.expand('%:p'); local escaped = root:gsub("([%(%)%.%%%+%-%*%?%[%^%$])", "%%%1"); local rel = bufpath:gsub("^" .. escaped .. "/", ""); vim.fn.setreg('+', rel); print("Copied: " .. rel) else print("Not in git repo") end<cr>'';
+      key = "<leader>cp";
+      desc = "Copy current file path from project root";
+    }
   ];
 }
