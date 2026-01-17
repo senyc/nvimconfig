@@ -36,6 +36,13 @@
             };
             path = 3;
           }
+          {
+            __unkeyed = ''require('grapple').statusline({include_icon = false, icon = ""})'';
+            padding = {
+              right = 0;
+              left = 1;
+            };
+          }
         ];
 
         lualine_x = ["encoding"];
@@ -48,7 +55,13 @@
             __unkeyed = "tabs";
             mode = 1;
             tab_max_length = 60;
-            max_length = { __raw = /*lua*/"function() return vim.o.columns end";};
+            max_length = {
+              __raw =
+                /*
+                lua
+                */
+                "function() return vim.o.columns end";
+            };
           }
         ];
       };

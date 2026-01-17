@@ -22,7 +22,10 @@
     servers = {
       emmet_language_server.enable = true;
       typos_lsp.enable = true;
-      vue_ls.enable = true;
+      vue_ls = {
+        enable = false;
+        filetypes = ["vue"];
+      };
       terraformls.enable = true;
       bashls.enable = true;
       clangd.enable = true;
@@ -73,7 +76,16 @@
       };
       pyright.enable = true;
       tailwindcss.enable = true;
-      ts_ls.enable = true;
+      vtsls = {
+        enable = true;
+        extraOptions = {
+          settings = {
+            vtsls = {
+              enableMoveToFileCodeAction = true;
+            };
+          };
+        };
+      };
       helm_ls = {
         enable = true;
         settings = {

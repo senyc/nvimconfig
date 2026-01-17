@@ -6,7 +6,7 @@
     treesitter = {
       enable = true;
       nixvimInjections = true;
-      folding = false;
+      folding.enable = false;
       settings = {
         highlight = {
           enable = true;

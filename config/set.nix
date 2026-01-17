@@ -18,7 +18,7 @@
     softtabstop = 2;
     shiftwidth = 2;
 
-    ignorecase = true;
+    smartcase = true;
     incsearch = true;
 
     scrolloff = 10;
