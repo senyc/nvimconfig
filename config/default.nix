@@ -20,6 +20,7 @@
     ../plugins/lualine.nix
     ../plugins/blink.nix
     ../plugins/treesitter.nix
+    ../plugins/dap.nix
     ../plugins/colorscheme.nix
     ../plugins/grapple.nix
     ../plugins/gitsigns.nix
