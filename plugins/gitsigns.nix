@@ -57,5 +57,15 @@ in {
       action = "<cmd>Gitsigns toggle_current_line_blame<cr>";
       desc = "Toggle line blame";
     }
+    {
+      key = "<c-w>b";
+      action = "<cmd>Gitsigns blame_line<cr>";
+      desc = "Current line blame popup";
+    }
+    {
+      key = "<c-w>g";
+      action = "<cmd>Gitsigns blame<cr>";
+      desc = "Toggle line blame sidebar";
+    }
   ];
 }
